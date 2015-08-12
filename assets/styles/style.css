@@ -277,6 +277,7 @@ h2 {
   /*background: linear-gradient(#FFE852, #FFDC47); /* Standard syntax */
 }
 
+/* The introductory orange box */
 h2#orange {
 	text-transform: uppercase;
 	line-height: 1.8em;
