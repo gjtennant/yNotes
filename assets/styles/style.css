@@ -1,0 +1,439 @@
+/* -----------------------------------------
+	Table of Contents: 
+
+	Scale
+	Tag Resets
+	Normalize CSS
+	Web Fonts
+	Fluid Media
+	Custom Styles
+	Media Queries
+
+----------------------------------------- */
+
+/* -----------------------------------------
+	Scale
+----------------------------------------- */
+
+/* 
+font-size: 17px target / 16px default = 1.063em
+line-height: 20px target / 16px font = 1.25em
+
+Scale: 1.063 x 1.25 = 1.32875, round to 1.3 
+
+3/4 scale = 0.975
+1/2 scale = 0.65
+1/4 scale = 0.325
+*/
+
+
+/* -----------------------------------------
+
+	Tag Resets
+
+----------------------------------------- */
+
+body,
+div,
+h1,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+
+/* -----------------------------------------
+
+	Normalize CSS
+	http://necolas.github.com/normalize.css/
+
+----------------------------------------- */
+
+html {
+	height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	min-height: 100%;
+	font-size: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+audio,
+canvas,
+video {
+	display: block;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+
+textarea {
+	overflow: auto;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* -----------------------------------------
+
+	Web Fonts
+
+----------------------------------------- */
+
+
+@font-face {
+	font-family:"liberationsans";
+	font-weight: normal;
+	font-style: normal;
+	src: url('../fonts/liberationsans-regular-webfont.eot');
+	src: url('../fonts/liberationsans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/liberationsans-regular-webfont.svg#liberationsans-regular') format('svg'),
+	     url('../fonts/liberationsans-regular-webfont.ttf') format('truetype'),
+	     url('../fonts/liberationsans-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+	font-family:"liberationsans";
+	font-weight: normal;
+	font-style: italic;
+	src: url('../fonts/liberationsans-italic-webfont.eot');
+	src: url('../fonts/liberationsans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/liberationsans-italic-webfont.svg#liberationsans-italic') format('svg'),
+	     url('../fonts/liberationsans-italic-webfont.ttf') format('truetype'),
+	     url('../fonts/liberationsans-italic-webfont.woff') format('woff');
+}
+
+@font-face {
+	font-family:"liberationsans";
+	font-weight: bold;
+	font-style: normal;
+	src: url('../fonts/liberationsans-bold-webfont.eot');
+	src: url('../fonts/liberationsans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/liberationsans-bold-webfont.svg#liberationsans-bold') format('svg'),
+	     url('../fonts/liberationsans-bold-webfont.ttf') format('truetype'),
+	     url('../fonts/liberationsans-bold-webfont.woff') format('woff');
+}
+
+@font-face {
+	font-family:"liberationsans";
+	font-weight: bold;
+	font-style: italic;
+	src: url('../fonts/liberationsans-bolditalic-webfont.eot');
+	src: url('../fonts/liberationsans-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/liberationsans-bolditalic-webfont.svg#liberationsans-bolditalic') format('svg'),
+	     url('../fonts/liberationsans-bolditalic-webfont.ttf') format('truetype'),
+	     url('../fonts/liberationsans-bolditalic-webfont.woff') format('woff');
+}
+
+
+/* -----------------------------------------
+
+	Fluid Media
+
+----------------------------------------- */
+
+
+figure {
+	position: relative;
+}
+
+figure img,
+figure object,
+figure embed,
+figure video,
+figure iframe {
+	display: block;
+	max-width: 100%; 
+	margin:.65em auto;
+}
+
+/* 
+interpolation-mode
+http://css-tricks.com/ie-fix-bicubic-scaling-for-images/
+ */
+
+img {
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+
+/* -----------------------------------------
+
+	Custom Styles
+
+----------------------------------------- */
+
+
+body {
+	font-family:"liberationsans",sans-serif;
+ 	line-height: 1.5em;
+	padding:1em;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width:65%;
+	margin:1em auto;
+}
+
+h1 {
+	/*font-weight: normal;*/
+	/*cursor: pointer;*/
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 1.063;
+	margin-top:2em;
+	margin-bottom: 1.65em;
+}
+
+/* Clickable policy statement */
+h2 {
+	font-weight: normal;
+	font-size: 1em;
+	padding: .365em;
+	border-radius:8px;
+	cursor:pointer;
+	/*background-color:#F0F0F0;*/
+	background-color:#F9E8BF;
+	/*background: -webkit-linear-gradient(#FFE852, #FFDC47); /* For Safari 5.1 to 6.0 */
+  /*background: -o-linear-gradient(#FFE852, #FFDC47); /* For Opera 11.1 to 12.0 */
+  /*background: -moz-linear-gradient(#FFE852, #FFDC47); /* For Firefox 3.6 to 15 */
+  /*background: linear-gradient(#FFE852, #FFDC47); /* Standard syntax */
+}
+
+h2#orange {
+	text-transform: uppercase;
+	line-height: 1.8em;
+	cursor:pointer;
+	padding:1em;
+	border-radius:20px;
+	width: 190px;
+	margin:0 auto;
+	text-align: center;
+	color:white;
+	box-shadow: .3em .3em .65em #888;
+	background-color:#E8A300;
+}
+
+h2 span.down,
+h2 span.up {
+	display: inline-block;
+}
+
+h2 span.down:after {
+	background: transparent url('../img/1397d.png') no-repeat;
+	content: '';
+	display:inline-block;
+	width:16px;
+	height:16px;
+}
+
+h2 span.up:after {
+	background: transparent url('../img/1397u.png') no-repeat;
+	content: '';
+	display:inline-block;
+	width:16px;
+	height:16px;
+}
+
+
+/* Pro-Con headers */
+h3 {
+	font-weight: bold;
+	font-style:italic;
+	font-size:.975em;
+	margin-top:1.965em;
+	color:#8B4513; /* saddlebrown */
+}
+
+h4 {
+	font-weight: bold;
+	font-size:1em;
+	line-height: 1.3;
+	margin-bottom:.365em;
+	color:#53290B;
+}
+
+p {
+	line-height: 1.3;
+	margin-bottom: .75em;
+}
+
+a,
+a:hover,
+a:active {
+	color:#000;
+	text-decoration: none;
+}
+
+.closetopic {
+	cursor:pointer;
+	font-weight: bold;
+	font-size: .65em;
+	line-height: 2.1;
+	border-radius:4px;
+	/*border-radius:50%;*/
+	width:100px;
+	padding:.365em 0;
+	text-align: center;
+	color:#222;
+	background-color: #fff;
+	border:1px solid #222;
+	margin-bottom:4em;
+	vertical-align: baseline;
+}
+
+ul {
+	list-style-type: none;
+	list-style-position: inside;
+	margin-bottom:1.965em;
+}
+
+ul.vids {
+	list-style-type: none;
+}
+
+ul li {
+	margin-top:2em;	
+}
+
+ul.vids li {
+	margin-top:0;
+}
+
+ul li p {
+	/*margin-left:.65em;*/
+}
+
+footer {
+	margin-top:50em;
+	color:#fff;
+}
+
+#subtitle {
+	font-size: .5em;
+	font-weight: normal;
+}
+
+
+
+
+/* -----------------------------------------
+
+	Media Queries for smaller than 768px or 48em
+
+----------------------------------------- */
+
+@media screen and (max-width: 48em) {
+
+	body {
+		font-size: 107%;
+		width:85%;
+	}
+
+	.closetopic {
+		margin:0 auto 1.65em;
+		width:80%;
+	}
+
+}
+
+
+/* -----------------------------------------
+
+	Media Queries for smaller than 568px or 35.5em
+
+----------------------------------------- */
+
+@media screen and (max-width: 35.5em) {
+
+	body {
+		width:95%;
+		padding:0 0 1em;
+	}
+
+	h1 {
+		font-size:1.2em;
+	}
+
+	.closetopic {
+		width: 100%;
+	}
+
+}
