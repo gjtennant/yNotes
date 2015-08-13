@@ -316,6 +316,7 @@ h2 span.up:after {
 
 /* Pro-Con headers */
 h3 {
+	border-top:1px solid #CBBFB6; 
 	font-weight: bold;
 	font-style:italic;
 	font-size:.975em;
@@ -354,8 +355,9 @@ a:active {
 	padding:.365em 0;
 	text-align: center;
 	color:#222;
-	background-color: #fff;
-	border:1px solid #222;
+	background-color:#F9E8BF; /* light orange */
+	/*background-color: #fff;*/
+	/*border:1px solid #222;*/
 	margin-bottom:4em;
 	vertical-align: baseline;
 }
