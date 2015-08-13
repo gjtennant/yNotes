@@ -317,6 +317,7 @@ h2 span.up:after {
 /* Pro-Con headers */
 h3 {
 	border-top:1px solid #CBBFB6; 
+	padding-top:.365em;
 	font-weight: bold;
 	font-style:italic;
 	font-size:.975em;
