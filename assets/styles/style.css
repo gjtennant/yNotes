@@ -252,6 +252,14 @@ body {
 	margin:1em auto;
 }
 
+header {
+	top:0px;
+	height:20px;
+	width:100%;
+	background-color: #fff;
+	position:fixed;
+}
+
 h1 {
 	/*font-weight: normal;*/
 	/*cursor: pointer;*/
@@ -283,10 +291,12 @@ h1 {
 h2 {
 	font-weight: normal;
 	font-size: 1em;
+	/*margin-top:1.3em;*/
 	padding-top:.365em;
 	cursor:pointer;
+	border-top:1px solid #CBBFB6; /* pale brown */
 	/*border-top:2px solid #53290B; /* dark brown */ 
-	border-top:10px solid #8B4513; /* saddlebrown */ 
+	/*border-top:10px solid #8B4513; /* saddlebrown */ 
 	/*border-radius:8px;*/
 	/*background-color:#F0F0F0; /* light gray */
 	/*background-color:#F9E8BF; /* light orange */
@@ -318,7 +328,7 @@ h2 span.up:after {
 }
 
 
-/* Pro-Con headers */
+/* Pro-Con Reasons Why headers */
 h3 {
 	border-top:1px solid #CBBFB6; /* pale brown */
 	padding-top:.365em;
