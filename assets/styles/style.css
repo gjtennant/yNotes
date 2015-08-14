@@ -312,19 +312,23 @@ h2 span.up {
 }
 
 h2 span.down:after {
-	background: transparent url('../img/1397d.png') no-repeat;
+	background: transparent url('../img/arrow-dn-6.png') no-repeat;
 	content: '';
 	display:inline-block;
-	width:16px;
-	height:16px;
+	width:11px;
+	height:6px;
+	margin-left:.4em;
+	margin-bottom:.2em;
 }
 
 h2 span.up:after {
-	background: transparent url('../img/1397u.png') no-repeat;
+	background: transparent url('../img/arrow-up-6.png') no-repeat;
 	content: '';
 	display:inline-block;
-	width:16px;
-	height:16px;
+	width:11px;
+	height:6px;
+	margin-left:.4em;
+	margin-bottom:.2em;
 }
 
 
