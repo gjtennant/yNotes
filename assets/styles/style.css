@@ -262,34 +262,38 @@ h1 {
 	margin-bottom: 1.65em;
 }
 
-/* Clickable policy statement */
-h2 {
-	font-weight: normal;
-	font-size: 1em;
-	padding: .365em;
-	border-radius:8px;
-	cursor:pointer;
-	/*background-color:#F0F0F0;*/
-	background-color:#F9E8BF; /* light orange */
-	/*background: -webkit-linear-gradient(#FFE852, #FFDC47); /* For Safari 5.1 to 6.0 */
-  /*background: -o-linear-gradient(#FFE852, #FFDC47); /* For Opera 11.1 to 12.0 */
-  /*background: -moz-linear-gradient(#FFE852, #FFDC47); /* For Firefox 3.6 to 15 */
-  /*background: linear-gradient(#FFE852, #FFDC47); /* Standard syntax */
-}
-
 /* The introductory orange box */
-h2#orange {
+#orange {
 	text-transform: uppercase;
+	font-weight: normal;
 	line-height: 1.8em;
 	cursor:pointer;
 	padding:1em;
 	border-radius:20px;
+	/*width: 65px;*/
 	width: 190px;
 	margin:0 auto;
 	text-align: center;
 	color:white;
-	box-shadow: .3em .3em .65em #888;
+	/*box-shadow: .3em .3em .65em #888;*/
 	background-color:#E8A300;
+}
+
+/* Clickable policy statement */
+h2 {
+	font-weight: normal;
+	font-size: 1em;
+	padding-top:.365em;
+	cursor:pointer;
+	/*border-top:2px solid #53290B; /* dark brown */ 
+	border-top:10px solid #8B4513; /* saddlebrown */ 
+	/*border-radius:8px;*/
+	/*background-color:#F0F0F0; /* light gray */
+	/*background-color:#F9E8BF; /* light orange */
+	/*background: -webkit-linear-gradient(#FFE852, #FFDC47); /* For Safari 5.1 to 6.0 */
+  /*background: -o-linear-gradient(#FFE852, #FFDC47); /* For Opera 11.1 to 12.0 */
+  /*background: -moz-linear-gradient(#FFE852, #FFDC47); /* For Firefox 3.6 to 15 */
+  /*background: linear-gradient(#FFE852, #FFDC47); /* Standard syntax */
 }
 
 h2 span.down,
@@ -316,7 +320,7 @@ h2 span.up:after {
 
 /* Pro-Con headers */
 h3 {
-	border-top:1px solid #CBBFB6; 
+	border-top:1px solid #CBBFB6; /* pale brown */
 	padding-top:.365em;
 	font-weight: bold;
 	font-style:italic;
@@ -330,7 +334,7 @@ h4 {
 	font-size:1em;
 	line-height: 1.3;
 	margin-bottom:.365em;
-	color:#53290B;
+	color:#53290B; /* dark brown */
 }
 
 p {
@@ -356,9 +360,9 @@ a:active {
 	padding:.365em 0;
 	text-align: center;
 	color:#222;
-	background-color:#F9E8BF; /* light orange */
-	/*background-color: #fff;*/
-	/*border:1px solid #222;*/
+	/*background-color:#F9E8BF; /* light orange */
+	background-color: #fff;
+	border:1px solid #222;
 	margin-bottom:4em;
 	vertical-align: baseline;
 }
@@ -429,7 +433,7 @@ footer {
 
 	body {
 		width:95%;
-		padding:0 0 1em;
+		padding:0 .365em 1em;
 	}
 
 	h1 {
