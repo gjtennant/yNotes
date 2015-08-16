@@ -153,6 +153,18 @@ table {
 	border-spacing: 0;
 }
 
+/* this is taken from an article about correcting a problem where Apple mobile devices wouldn't play iframe videos: */
+
+a,
+object,
+input,
+a:active,
+a:focus,
+input:active,
+input:focus {
+	outline:none;
+}
+
 
 /* -----------------------------------------
 
