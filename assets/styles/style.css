@@ -104,6 +104,10 @@ video {
 	display: block;
 }
 
+iframe {
+	border:none;
+}
+
 sub,
 sup {
 	font-size: 75%;
@@ -413,7 +417,11 @@ footer {
 	font-weight: normal;
 }
 
-
+.youtube,
+.vimeo {
+	width:560px;
+	height:315px;
+}
 
 
 /* -----------------------------------------
@@ -432,6 +440,12 @@ footer {
 	.closetopic {
 		margin:0 auto 1.65em;
 		width:80%;
+	}
+
+	.youtube,
+	.vimeo {
+		width:426px;
+		height:240px;
 	}
 
 }
@@ -456,6 +470,12 @@ footer {
 
 	.closetopic {
 		width: 100%;
+	}
+
+	.youtube,
+	.vimeo {
+		width:320px;
+		height:160px;
 	}
 
 }
