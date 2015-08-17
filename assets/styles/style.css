@@ -286,7 +286,14 @@ h1 {
 	margin-bottom: 1.65em;
 }
 
-/* The introductory orange box */
+#subtitle {
+	display:block;
+	margin-top:1.365em;
+	font-size: .85em;
+	font-weight: normal;
+}
+
+/* orange start button */
 #orange {
 	text-transform: uppercase;
 	font-weight: normal;
@@ -296,7 +303,7 @@ h1 {
 	border-radius:20px;
 	/*width: 65px;*/
 	width: 190px;
-	margin:0 auto;
+	margin:4.65em auto;
 	text-align: center;
 	color:white;
 	/*box-shadow: .3em .3em .65em #888;*/
@@ -413,11 +420,6 @@ ul li {
 
 ul.vids li {
 	margin-top:0;
-}
-
-#subtitle {
-	font-size: .85em;
-	font-weight: normal;
 }
 
 .youtube,
