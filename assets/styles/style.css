@@ -415,17 +415,8 @@ ul.vids li {
 	margin-top:0;
 }
 
-ul li p {
-	/*margin-left:.65em;*/
-}
-
-footer {
-	margin-top:50em;
-	color:#fff;
-}
-
 #subtitle {
-	font-size: .5em;
+	font-size: .75em;
 	font-weight: normal;
 }
 
