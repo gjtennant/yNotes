@@ -7,6 +7,7 @@
 	<title>Global Warming</title>
 	<meta name='ROBOTS' content='INDEX,FOLLOW'>
 	<link rel="stylesheet" href="../assets/styles/style.css">
+	<meta name="description" content="Carbon pollution is causing global warming and should be regulated.">
 	<!-- Viewport meta tag to prevent iPhone from zooming down our page -->
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 
@@ -18,132 +19,272 @@
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- This is your tracking code. Copy and paste it into the code of every page you want to track. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
-	<div>
-		<a href="../list.html#globalwarming">
-			<h2>
-				Carbon pollution is causing <strong>global warming</strong> and should be <span class='up'>regulated.</span>
-			</h2>
-		</a>
-		
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>The scientific consensus leaves no room for doubt.</h4>
-				<p>The national academies of science in every major country all agree that carbon pollution is causing global warming and should be reduced immediately.</p>
-			</li>
-			<li>
-				<h4>There's a very high risk that we're causing a worldwide catastrophe.</h4>
-				<p>Would you let your family drink water that 9 out of 10 tests said was poisoned? Would you ridicule scientists who tried to raise the alarm about it?</p>
-			</li>
-			<li>
-				<h4>The issue of global warming is like where smoking was 25 years ago.</h4>
-				<p>Just like the tobacco industry used to do, the fossil fuel industry pays "experts" to muddy the waters &#8211; so profits can roll in a little while longer.</p>
-			</li>
-			<li>
-				<h4>Even the oil companies are saying global warming is caused by people.</h4>
-				<p>If the CEOs of Shell Oil and Exxon-Mobil agree with the science &#8211; not to mention the Pope and the President of the United States &#8211; where does that leave you?</p>
-			</li>
-			<li>
-				<h4>The Bible tells us to be concerned about global warming.</h4>
-				<p>God appointed mankind to be steward of this world (Genesis 1:28). What more important stewardship decision is there than addressing global warming?</p>
-			</li>
-			<li>
-				<h4>Carbon pollution is causing acidification of the oceans.</h4>
-				<p>A more acidic ocean dissolves the calcium shells of plankton, the base of the ocean's entire food chain.</p>
-			</li>
-			<li>
-				<h4>It's time to have Congressional hearings about the global warming "hoax."</h4>
-				<p>Is there a conspiracy by the world's scientists to destroy our economy, or by industry to put civilization at risk for a few extra years of profit?</p>
-			</li>
-			<li>
-				<h4>The catastrophe will hit the world's poor first and hardest.</h4>
-				<p>Allowing hundreds of millions of people to die from extreme weather events caused by our carbon pollution will make us the greatest mass murderers in History.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/W7zFZ80izZU?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/G-fZnlR_IJ0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/xU6z1XXIOgw?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
+		<div>
+			<a href="../list.html#globalwarming">
+				<h3>
+					Carbon pollution is causing <strong>global warming</strong> and should be <span class='up'>regulated.</span>
+				</h3>
+			</a>
+			
+			<h4>Reasons Why</h4>
+			<ul>
+				<li id="ap1">
+					<h5>The scientific consensus leaves no room for doubt.</h5>
+					<p>The national academies of science in every major country all agree that carbon pollution is causing global warming and should be reduced immediately.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap2">
+					<h5>There's a very high risk that we're causing a worldwide catastrophe.</h5>
+					<p>Would you let your family drink water that 9 out of 10 tests said was poisoned? Would you ridicule scientists who tried to raise the alarm about it?</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap3">
+					<h5>The issue of global warming is like where smoking was 25 years ago.</h5>
+					<p>Just like the tobacco industry used to do, the fossil fuel industry pays "experts" to muddy the waters &#8211; so profits can roll in a little while longer.
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap4">
+					<h5>Even the oil companies are saying global warming is caused by people.</h5>
+					<p>If the CEOs of Shell Oil and Exxon-Mobil agree with the science &#8211; not to mention the Pope and the President of the United States &#8211; where does that leave you?</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap5">
+					<h5>The Bible tells us to be concerned about global warming.</h5>
+					<p>God appointed mankind to be steward of this world (Genesis 1:28). What more important stewardship decision is there than addressing global warming?</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap6">
+					<h5>Carbon pollution is causing acidification of the oceans.</h5>
+					<p>A more acidic ocean dissolves the calcium shells of plankton, the base of the ocean's entire food chain.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap7">
+					<h5>It's time to have Congressional hearings about the global warming "hoax."</h5>
+					<p>Is there a conspiracy by the world's scientists to destroy our economy, or by industry to put civilization at risk for a few extra years of profit?</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap8">
+					<h5>The catastrophe will hit the world's poor first and hardest.</h5>
+					<p>Allowing hundreds of millions of people to die from extreme weather events caused by our carbon pollution will make us the greatest mass murderers in History.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vp1">
+					<figure>
+						<iframe class='youtube' src="https://www.youtube.com/embed/W7zFZ80izZU?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							William Shatner - Sierra Club Global Warming PSA, by NationalSierraClub
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp2">
+					<figure>
+						<iframe class='youtube' src="https://www.youtube.com/embed/G-fZnlR_IJ0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Tidal Flooding and Sea Level Rise: The Growing Impacts of Global Warming, by Union of Concerned Scientists
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp3">
+					<figure>
+						<iframe class='youtube' src="https://www.youtube.com/embed/xU6z1XXIOgw?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							The Easiest Way to Slow Climate Change, by Earthjustice
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
 
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>There will be technological fixes to the problem of global warming.</h4>
-				<p>Research is being conducted into solutions like carbon capture and geo-engineering, as well as alternative energy. We need to let innovation take its course.</p>
-			</li>
-			<li>
-				<h4>The people in charge don't seem concerned about global warming.</h4>
-				<p>If the Cold War were back, our leaders would be making it a priority. In the case of global warming, we hear lip service but no real urgency.</p>
-			</li>
-			<li>
-				<h4>Science changes its mind all the time.</h4>
-				<p>Is fat good or bad for you? What about carbs or salt? Chances are that the alarm over global warming is another hysteria that will fade with time.</p>
-			</li>
-			<li>
-				<h4>It's a conspiracy by scientists.</h4>
-				<p>Mainstream scientists are a tight-knit community controlling grants and publishing. This is the perfect recipe for reinforcing a false consensus on global warming.</p>
-			</li>
-			<li>
-				<h4>It's a conspiracy by proponents of World Government.</h4>
-				<p>Agreeing with the alarmists on global warming means giving more power &#8211; perhaps emergency powers &#8211; to our government, and even to international organizations like the UN.</p>
-			</li>
-			<li>
-				<h4>Some scientists disagree with the consensus.</h4>
-				<p>Every scientific breakthrough is achieved by scientists who buck the conventional wisdom. The minority of scientists who disagree with the conventional theory of human-caused global warming may well be right.</p>
-			</li>
-			<li>
-				<h4>Science doesn't really understand climate change very well.</h4>
-				<p>This means we shouldn't rush to conclusions and certainly not risk damaging our already fragile economy with overreactions to a problem that may turn out to be nothing.</p>
-			</li>
-			<li>
-				<h4>The Bible says that we shouldn't hold Nature higher than God.</h4>
-				<p>Environmentalism has a tendency to become a form of idolatry, where the "rights" of animals and an inanimate planet are held in higher esteem than God (Romans 1:25).</p>
-			</li>
-			<li>
-				<h4>The idea that humans have the power to change Earth's climate is absurd.</h4>
-				<p>The climate is too big, and too complex, and humans are far too small and insignificant.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>	
-					<iframe class='youtube' src="https://www.youtube.com/embed/93EN30bYQ0A?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-				<li>
-				<figure>	
-					<iframe class='vimeo' src="http://player.vimeo.com/video/15874797?title=0&byline=0" allowfullscreen></iframe>
-				</figure>	
-			</li>
-			<li>
-				<figure>	
-					<iframe class='youtube' src="https://www.youtube.com/embed/_CM9YR6PZKo?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-		<a href='../list.html#globalwarming'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
-
+			<h4>Reasons Why Not</h4>
+			<ul>
+				<li id="ac1">
+					<h5>There will be technological fixes to the problem of global warming.</h5>
+					<p>Research is being conducted into solutions like carbon capture and geo-engineering, as well as alternative energy. We need to let innovation take its course.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac2">
+					<h5>The people in charge don't seem concerned about global warming.</h5>
+					<p>If the Cold War were back, our leaders would be making it a priority. In the case of global warming, we hear lip service but no real urgency.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac3">
+					<h5>Science changes its mind all the time.</h5>
+					<p>Is fat good or bad for you? What about carbs or salt? Chances are that the alarm over global warming is another hysteria that will fade with time.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac4">
+					<h5>It's a conspiracy by scientists.</h5>
+					<p>Mainstream scientists are a tight-knit community controlling grants and publishing. This is the perfect recipe for reinforcing a false consensus on global warming.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac5">
+					<h5>It's a conspiracy by proponents of World Government.</h5>
+					<p>Agreeing with the alarmists on global warming means giving more power &#8211; perhaps emergency powers &#8211; to our government, and even to international organizations like the UN.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac6">
+					<h5>Some scientists disagree with the consensus.</h5>
+					<p>Every scientific breakthrough is achieved by scientists who buck the conventional wisdom. The minority of scientists who disagree with the conventional theory of human-caused global warming may well be right.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac7">
+					<h5>Science doesn't really understand climate change very well.</h5>
+					<p>This means we shouldn't rush to conclusions and certainly not risk damaging our already fragile economy with overreactions to a problem that may turn out to be nothing.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac8">
+					<h5>The Bible says that we shouldn't hold Nature higher than God.</h5>
+					<p>Environmentalism has a tendency to become a form of idolatry, where the "rights" of animals and an inanimate planet are held in higher esteem than God (Romans 1:25).</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac9">
+					<h5>The idea that humans have the power to change Earth's climate is absurd.</h5>
+					<p>The climate is too big, and too complex, and humans are far too small and insignificant.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vc1">
+					<figure>	
+						<iframe class='youtube' src="https://www.youtube.com/embed/93EN30bYQ0A?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Settling the Global Warming Debate in 90 Seconds, by HeartlandTube
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+					<li id="vc2">
+					<figure>	
+						<iframe class='vimeo' src="http://player.vimeo.com/video/15874797?title=0&amp;byline=0" allowfullscreen></iframe>
+						<figcaption>
+							Resisting the Green Dragon full promo, by Cornwall Alliance
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc3">
+					<figure>	
+						<iframe class='youtube' src="https://www.youtube.com/embed/_CM9YR6PZKo?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Freeman Dyson Blasts Global Warming Alarmism, by 1000frolly
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
+		</div> <!-- END TOPIC -->
+	</div>
 </body>
 </html>

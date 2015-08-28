@@ -18,89 +18,200 @@
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- This is your tracking code. Copy and paste it into the code of every page you want to track. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
-	<div>
-		<a href="../list.html#abortion"> 
-			<h2>
-				<strong>Abortion</strong> should be highly <span class='up'>restricted.</span>
-			</h2>
-		</a>
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>It will be a person very soon.</h4>
-				<p>It doesn't make sense that a fetus a few weeks away from personhood should have no rights. In the case of human beings, shouldn't we err on the side of caution?</p>
-			</li>
-			<li>
-				<h4>The fetus can feel pain even before it becomes a full person.</h4>
-				<p>Protection from harm should be based on the capacity to suffer. That rule should apply to fetuses as well as animals.</p>
-			</li>
-			<li>
-				<h4>Abortion is not part of God's plan.</h4>
-				<p>Fertilization is a clear expression of God's intention to produce a baby.</p>
-			</li>
-			<li>
-				<h4>A fetus, even an embryo, has rights as a member of the human species.</h4>
-				<p>It really doesn't matter whether the fetus is a "person," in the conventional sense of being developed enough to look like a person.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/4H50KC3C0ok?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/HIh10_Ik5e8?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/WKXEnRVeBo4?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
+		<article>
+			<a href="../list.html#abortion"> 
+				<h3>
+					<strong>Abortion</strong> should be highly <span class='up'>restricted.</span>
+				</h3>
+			</a>
+			<section>
+				<h4>Reasons Why</h4>
+				<ul>
+					<li id="ap1">
+						<h5>It will be a person very soon.</h5>
+						<p>It doesn't make sense that a fetus a few weeks away from personhood should have no rights. In the case of human beings, shouldn't we err on the side of caution?</p>
+						<div class="share-mail-arg">
+							<a href="">Share</a>
+						</div>
+					</li>
+					<li id="ap2">
+						<h5>The fetus can feel pain even before it becomes a full person.</h5>
+						<p>Protection from harm should be based on the capacity to suffer. That rule should apply to fetuses as well as animals.</p>
+						<div class="share-mail-arg">
+							<a href="">Share</a>
+						</div>
+					</li>
+					<li id="ap3">
+						<h5>Abortion is not part of God's plan.</h5>
+						<p>Fertilization is a clear expression of God's intention to produce a baby.</p>
+						<div class="share-mail-arg">
+							<a href="">Share</a>
+						</div>
+					</li>
+					<li id="ap4">
+						<h5>A fetus, even an embryo, has rights as a member of the human species.</h5>
+						<p>It really doesn't matter whether the fetus is a "person," in the conventional sense of being developed enough to look like a person.</p>
+						<div class="share-mail-arg">
+							<a href="">Share</a>
+						</div>
+					</li>
+				</ul>
+				<ul class="vids">
+					<li id="vp1">
+						<figure>
+							<iframe class='youtube' src="https://www.youtube.com/embed/4H50KC3C0ok?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+							<figcaption>
+								Pro-Life Truth &#8211; 7 Ways to Silence Your Liberal Professor, by tfpstudentaction
+							</figcaption>
+						</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+					</li>
+					<li id="vp2">
+						<figure>
+							<iframe class='youtube' src="https://www.youtube.com/embed/HIh10_Ik5e8?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+							<figcaption>
+								Pro-life Video &#8211; Choose Life, by HyperPixelsMedia
+							</figcaption>
+						</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+					</li>
+					<li id="vp3">
+						<figure>
+							<iframe class='youtube' src="https://www.youtube.com/embed/WKXEnRVeBo4?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+							<figcaption>
+								Pro-life Anti-abortion Advert &#8211; Beautiful footage of an unborn baby with a powerful message, by Youth Defence
+							</figcaption>
+						</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+					</li>
+				</ul>
+			</section>
 
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>We don't know when a fetus becomes a person.</h4>
-				<p>Therefore abortion, especially early-stage abortion, should be an individual choice &#8211; based on a woman's conscience, not on government dictates.</p>
-			</li>
-			<li>
-				<h4>A woman has the right to make choices about her own body.</h4>
-				<p>Pregnancy is a physiological process. A woman's body determines whether the zygote will implant and whether the fetus will be carried to term.</p>
-			</li>
-		</ul>
+			<section>
+				<h4>Reasons Why Not</h4>
+				<ul>
+					<li id="ac1">
+						<h5>We don't know when a fetus becomes a person.</h5>
+						<p>Therefore abortion, especially early-stage abortion, should be an individual choice &#8211; based on a woman's conscience, not on government dictates.</p>
+						<div class="share-mail-arg">
+							<a href="">Share</a>
+						</div>
+					</li>
+					<li id="ac2">
+						<h5>A woman has the right to make choices about her own body.</h5>
+						<p>Pregnancy is a physiological process. A woman's body determines whether the zygote will implant and whether the fetus will be carried to term.</p>
+						<div class="share-mail-arg">
+							<a href="">Share</a>
+						</div>
+					</li>
+				</ul>
 
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/I8OB-f4Y5os?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/GKVzAu6k2_E?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://www.youtube.com/embed/AaWtLpnGT78?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-		<a href='../list.html#abortion'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
-
+				<ul class="vids">
+					<li id="vc1">
+						<figure>
+							<iframe class='youtube' src="https://www.youtube.com/embed/I8OB-f4Y5os?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+							<figcaption>
+								Said No Woman, by UltravioletAction
+							</figcaption>
+						</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+					</li>
+					<li id="vc2">
+						<figure>
+							<iframe class='youtube' src="https://www.youtube.com/embed/GKVzAu6k2_E?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+							<figcaption>
+								Ultraviolet &#8211; Like, by UltravioletAction
+							</figcaption>
+						</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+					</li>
+					<li id="vc3">
+						<figure>
+							<iframe class='youtube' src="https://www.youtube.com/embed/AaWtLpnGT78?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+							<figcaption>
+								End of Pretending, by UltravioletAction
+							</figcaption>
+						</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+					</li>
+				</ul>
+			</section>
+			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
+		</article> <!-- END TOPIC -->
+	</div> <!-- close container -->
 
 </body>
 </html>

@@ -7,6 +7,7 @@
 	<title>Illegal Immigration</title>
 	<meta name='ROBOTS' content='INDEX,FOLLOW'>
 	<link rel="stylesheet" href="../assets/styles/style.css">
+	<meta name="description" content="We should enforce our immigration laws">
 	<!-- Viewport meta tag to prevent iPhone from zooming down our page -->
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 
@@ -18,112 +19,238 @@
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- This is your tracking code. Copy and paste it into the code of every page you want to track. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
-	<div>
-		<a href="../list.html#immigration">
-			<h2>We should enforce our <strong>immigration</strong> <span class='up'>laws.</span></h2>
-		</a>
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>They're fundamental laws.</h4>
-				<p>What more basic law can a nation have than those that give control over its borders?</p>
-			</li>
-			<li>
-				<h4>We don't actually need more immigrants.</h4>
-				<p>We don't need to populate empty lands or factories. And we've got plenty of diversity at this point.</p>
-			</li>
-			<li>
-				<h4>Ignoring immigration laws is <em>not</em> civil disobedience.</h4>
-				<p>Civil rights workers were making a statement of conscience, and willing to go to jail for their beliefs. People who violate our immigration laws are acting out of self-interest.</p>
-			</li>
-			<li>
-				<h4>Uncontrolled immigration is a clear and present danger to our country.</h4>
-				<p>Overpopulation threatens our environment. Unassimilated populations threaten our institutions, including our schools and language. Poor immigrants lower wages, drain social services, and increase crime.</p>
-			</li>
-			<li>
-				<h4>Illegal immigration leads to exploitation of a vulnerable group.</h4>
-				<p>US employers take advantage of illegal immigrants. The best way to stop this exploitation is to enforce our immigration laws.</p>
-			</li>
-		</ul>
+		<div>
+			<a href="../list.html#immigration">
+				<h3>We should enforce our <strong>immigration</strong> <span class='up'>laws.</span></h3>
+			</a>
 
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/XkNAeCttiVY?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/3wm4KVpVLOE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/X8DS5wtTt3M?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-		
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>Illegal immigrants are a pillar of our economy.</h4>
-				<p>Multiply 10 million workers by 2,000 hours per year by $5 per hour (or more) that they're underpaid. That adds up to a $100 billion gift to our economy &#8211; far more than what they cost us in services.</p>
-			</li>
-			<li>
-				<h4>Most illegal immigrants are Americans in all but name.</h4>
-				<p>These are folks who've been here most of their lives, are law-abiding, speak English, go to school, and pay taxes.</p>
-			</li>
-			<li>
-				<h4>Immigrants contribute a lot to our society.</h4>
-				<p>They're incredibly motivated, hard-working, and resourceful individuals. It's what made us great and what will continue to make us great.</p>
-			</li>
-			<li>
-				<h4>We invited them here.</h4>
-				<p>We ask illegal immigrants to work &#8211; in our fields, restaurants, and homes. It seems hypocritical to invite them in and then try to kick them out.</p>
-			</li>
-			<li>
-				<h4>Immigration laws promote exploitation of a vulnerable group.</h4>
-				<p>The best way to prevent this exploitation is to give illegal immigrants a path to citizenship.</p>
-			</li>
-			<li>
-				<h4>We're all immigrants.</h4>
-				<p>The vast majority of Americans are immigrants or descended from immigrants. It seems hypocritical to pull up the ladder now that we're safely aboard. </p>
-			</li>
-			<li>
-				<h4>It's inhumane to deport illegal immigrants.</h4>
-				<p>They don't have a home anywhere else, it breaks up families, and many of these immigrants would be put into very dangerous situations by being deported to their home countries.</p>
-			</li>
-		</ul>
-		
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/bWzDW9dkmOQ?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/JOORY4mngoI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/ylISvwxA8Vs?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
+			<h4>Reasons Why</h4>
+			<ul>
+				<li id="ap1">
+					<h5>They're fundamental laws.</h5>
+					<p>What more basic law can a nation have than those that give control over its borders?</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap2">
+					<h5>We don't actually need more immigrants.</h5>
+					<p>We don't need to populate empty lands or factories. And we've got plenty of diversity at this point.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap3">
+					<h5>Ignoring immigration laws is not civil disobedience.</h5>
+					<p>Civil rights workers were making a statement of conscience, and willing to go to jail for their beliefs. People who violate our immigration laws are acting out of self-interest.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap4">
+					<h5>Uncontrolled immigration is a clear and present danger to our country.</h5>
+					<p>Overpopulation threatens our environment. Unassimilated populations threaten our institutions, including our schools and language. Poor immigrants lower wages, drain social services, and increase crime.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap5">
+					<h5>Illegal immigration leads to exploitation of a vulnerable group.</h5>
+					<p>US employers take advantage of illegal immigrants. The best way to stop this exploitation is to enforce our immigration laws.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
 
-		<a href='../list.html#immigration'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
+			<ul class="vids">
+				<li id="vp1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/XkNAeCttiVY?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Facts SD 04, by theaicontrol
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/3wm4KVpVLOE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Off The Charts with Roy Beck (abridged version &#8211; 2010), by NumbersUSA
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/X8DS5wtTt3M?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Who should get the next U.S. jobs? More new immigrants or America's jobless? by NumbersUSA
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
 
+			<h4>Reasons Why Not</h4>
+			<ul>
+				<li id="ac1">
+					<h5>Illegal immigrants are a pillar of our economy.</h5>
+					<p>Multiply 10 million workers by 2,000 hours per year by $5 per hour (or more) that they're underpaid. That adds up to a $100 billion gift to our economy &#8211; far more than what they cost us in services.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac2">
+					<h5>Most illegal immigrants are Americans in all but name.</h5>
+					<p>These are folks who've been here most of their lives, are law-abiding, speak English, go to school, and pay taxes.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac3">
+					<h5>Immigrants contribute a lot to our society.</h5>
+					<p>They're incredibly motivated, hard-working, and resourceful individuals. It's what made us great and what will continue to make us great.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac4">
+					<h5>We invited them here.</h5>
+					<p>We ask illegal immigrants to work &#8211; in our fields, restaurants, and homes. It seems hypocritical to invite them in and then try to kick them out.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac5">
+					<h5>Immigration laws promote exploitation of a vulnerable group.</h5>
+					<p>The best way to prevent this exploitation is to give illegal immigrants a path to citizenship.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac6">
+					<h5>We're all immigrants.</h5>
+					<p>The vast majority of Americans are immigrants or descended from immigrants. It seems hypocritical to pull up the ladder now that we're safely aboard. </p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac7">
+					<h5>It's inhumane to deport illegal immigrants.</h5>
+					<p>They don't have a home anywhere else, it breaks up families, and many of these immigrants would be put into very dangerous situations by being deported to their home countries.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			
+			<ul class="vids">
+				<li id="vc1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/bWzDW9dkmOQ?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							"I Didn't Say Goodbye" - Immigration PSA by Claudia Victoria Lemus
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/JOORY4mngoI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							illegal immigration PSA by Danna Forero
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/ylISvwxA8Vs?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							"Do I look Illegal?" A question for Arizona (PSA) by EKG Films
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+
+ 			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
+		</div> <!-- END TOPIC -->
+	</div>
 </body>
 </html>

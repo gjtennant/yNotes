@@ -18,85 +18,189 @@
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- This is your tracking code. Copy and paste it into the code of every page you want to track. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
-	<div>
-		<a href="../list.html#unions">
-			<h2>
-				<strong>Right-to-Work</strong> laws should be <span class='up'>supported.</span>
-			</h2>
-		</a>
-		
-		<p><em>Right-to-work laws allow people to work in a unionized workplace without joining the union or paying dues to that union.</em></p>
-		
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>Right-to-Work laws protect a worker's right to choose.</h4>
-				<p>Why should a worker be forced to support an organization he/she does not like? Forced unionism is anti-American.</p>
-			</li>
-			<li>
-				<h4>Right-to-Work laws create jobs.</h4>
-				<p>Unions hinder economic growth, and Right-to-Work laws provide a check on union power.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/dnYvsAEsJwo?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/8b1obcpvHDI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/U2P9ESv9_Rk?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>The real purpose of Right-to-Work laws is to kill unions.</h4>
-				<p>If you wanted to kill an insurance company, you'd pass a law saying the company had to cover everyone, but that paying the insurance premiums was optional.</p>
-			</li>
-			<li>
-				<h4>Right-to-Work laws mean union members have to pay for non-union members.</h4>
-				<p>With Right-to-Work, a union has to negotiate on behalf of all workers, so even the non-union workers benefit from the union &#8211; without paying any dues.</p>
-			</li>
-			<li>
-				<h4>Right-to-Work leads to lower wages for workers.</h4>
-				<p>Workers in Right-to-Work states make about $1,500 less per year than those in non-Right-to-Work states.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/woZGispXuMY?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/6qpPus3uMuU?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/z2TqcCvIVuI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-		<a href='../list.html#unions'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
-
+		<div>
+			<a href="../list.html#unions">
+				<h3>
+					<strong>Right-to-Work</strong> laws should be <span class='up'>supported.</span>
+				</h3>
+			</a>
+			
+			<p><em>Right-to-work laws allow people to work in a unionized workplace without joining the union or paying dues to that union.</em></p>
+			
+			<h4>Reasons Why</h4>
+			<ul>
+				<li id="ap1">
+					<h5>Right-to-Work laws protect a worker's right to choose.</h5>
+					<p>Why should a worker be forced to support an organization he/she does not like? Forced unionism is anti-American.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap2">
+					<h5>Right-to-Work laws create jobs.</h5>
+					<p>Unions hinder economic growth, and Right-to-Work laws provide a check on union power.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vp1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/dnYvsAEsJwo?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							The History of 'Right-to-Work', by WatchdogOrg
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/8b1obcpvHDI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Right to Work? - Jason Greer Labor Relations Expert Explains (St. Louis, MO), by Jason Greer
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/U2P9ESv9_Rk?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Right to Work is RIGHT for Missouri! by Americans For Prosperity
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<h4>Reasons Why Not</h4>
+			<ul>
+				<li id="ac1">
+					<h5>The real purpose of Right-to-Work laws is to kill unions.</h5>
+					<p>If you wanted to kill an insurance company, you'd pass a law saying the company had to cover everyone, but that paying the insurance premiums was optional.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac2">
+					<h5>Right-to-Work laws mean union members have to pay for non-union members.</h5>
+					<p>With Right-to-Work, a union has to negotiate on behalf of all workers, so even the non-union workers benefit from the union &#8211; without paying any dues.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac3">
+					<h5>Right-to-Work leads to lower wages for workers.</h5>
+					<p>Workers in Right-to-Work states make about $1,500 less per year than those in non-Right-to-Work states.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vc1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/woZGispXuMY?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							What is 'Right-to-Work'? by Middle Class Missouri
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/6qpPus3uMuU?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Four Concerns - Right to Work for Less is Wrong for Indiana, by inbctc
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/z2TqcCvIVuI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Right to Work for Less, by National LECET Fund
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
+		</div> <!-- END TOPIC -->
+	</div>
 </body>
 </html>

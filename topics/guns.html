@@ -18,98 +18,210 @@
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- This is your tracking code. Copy and paste it into the code of every page you want to track. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
-	<div>
-		<a href="../list.html#guns">
-			<h2>
-				We should be able to regulate <span class='up'><strong>guns</strong>.</span>
-			</h2>
-		</a>
-		
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>Guns create a climate of fear.</h4>
-				<p>The flood of unregulated guns is a threat to civilized society. Why should our pre-schoolers have to live in fear?</p>
-			</li>
-			<li>
-				<h4>One size does not fit all.</h4>
-				<p>Why should New York City and rural Montana be covered by the same gun laws? Let the states decide what's right for them.</p>
-			</li>
-			<li>
-				<h4>What's so special about guns?</h4>
-				<p>Does the Second Amendment cover the right to bear rocket launchers? Hand-grenades? Flame throwers? Suicide vests? Brass knuckles? Tanks? If we can regulate these, we can regulate guns.</p>
-			</li>
-			<li>
-				<h4>All rights are subject to regulation.</h4>
-				<p>We can't yell "fire!" in a crowded theater or call for the violent overthrow of the government. Why is the Second Amendment different from the others?</p>
-			</li>
-			<li>
-				<h4>The Second Amendment has disgusting origins.</h4>
-				<p>It was insisted on by the Southern states because of their slave rebellion problem, not to protect us from our own government or from criminals.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/Jfx7BDS8C6g?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/QIa4NkQXm8Y?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/3HILgFNsEF0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
+		<div>
+			<a href="../list.html#guns">
+				<h3>
+					We should be able to regulate <span class='up'><strong>guns</strong>.</span>
+				</h3>
+			</a>
+			
+			<h4>Reasons Why</h4>
+			<ul>
+				<li id="ap1">
+					<h5>Guns create a climate of fear.</h5>
+					<p>The flood of unregulated guns is a threat to civilized society. Why should our pre-schoolers have to live in fear?</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap2">
+					<h5>One size does not fit all.</h5>
+					<p>Why should New York City and rural Montana be covered by the same gun laws? Let the states decide what's right for them.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap3">
+					<h5>What's so special about guns?</h5>
+					<p>Does the Second Amendment cover the right to bear rocket launchers? Hand-grenades? Flame throwers? Suicide vests? Brass knuckles? Tanks? If we can regulate these, we can regulate guns.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap4">
+					<h5>All rights are subject to regulation.</h5>
+					<p>We can't yell "fire!" in a crowded theater or call for the violent overthrow of the government. Why is the Second Amendment different from the others?</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap5">
+					<h5>The Second Amendment has disgusting origins.</h5>
+					<p>It was insisted on by the Southern states because of their slave rebellion problem, not to protect us from our own government or from criminals.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vp1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/Jfx7BDS8C6g?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Celebrities "Demand a Plan" Gun Control PSA, by michaelspointofview
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/QIa4NkQXm8Y?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Stop Gun Violence &#8211; PSA, by Rejina Sincic
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/3HILgFNsEF0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Gun Violence &#8211; Is this the NewSchoolUniform? by Moms Demand Action for Gun Sense In America
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
 
+			<h4>Reasons Why Not</h4>
+			<ul>
+				<li id="ac1">
+					<h5>The Second Amendment is crystal clear.</h5>
+					<p>If we don't like it, then we should amend it. But for now, as the Supreme Court decided, it gives us the right to bear arms.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac2">
+					<h5>I have a right to defend myself and my family from crime.</h5>
+					<p>It's a dangerous world, and the government doesn't have the right to take away my ability to defend myself.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac3">
+					<h5>An armed citizenry discourages dictatorships.</h5>
+					<p>An armed citizenry is the last line of defense against tyranny.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vc1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/AoL9Mqqx_ZE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							PSA Gun Rights, by Courtney Schuman
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/vtAAI4xnmzE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							The best pro Gun Spokesman ever, by justinwoolee
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/L_-N9_tnWBo?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							15 year old girl leaves anti-gun politicians speechless, by James Madison
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
 
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>The Second Amendment is crystal clear.</h4>
-				<p>If we don't like it, then we should amend it. But for now, as the Supreme Court decided, it gives us the right to bear arms.</p>
-			</li>
-			<li>
-				<h4>I have a right to defend myself and my family from crime.</h4>
-				<p>It's a dangerous world, and the government doesn't have the right to take away my ability to defend myself.</p>
-			</li>
-			<li>
-				<h4>An armed citizenry discourages dictatorships.</h4>
-				<p>An armed citizenry is the last line of defense against tyranny.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/AoL9Mqqx_ZE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/vtAAI4xnmzE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/L_-N9_tnWBo?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-
-		<a href='../list.html#guns'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
-
+		</div> <!-- END TOPIC -->
+	</div>
 </body>
 </html>

@@ -18,104 +18,223 @@
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- This is your tracking code. Copy and paste it into the code of every page you want to track. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
-	<div>
-		<a href="../list.html#taxes">
-			<h2>
-				<strong>Taxes</strong> should be <span class='up'>cut.</span>
-			</h2>
-		</a>
-		
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>Taxes means throwing money at the problem, encouraging waste and fraud.</h4>
-				<p>Our public school system is a perfect example of the false idea that taxing and spending is the solution to our problems. This approach just makes things worse.</p>
-			</li>
-			<li>
-				<h4>Taxes undermine self-reliance.</h4>
-				<p>Arbitrary redistribution sends the wrong message to entrepreneurs and the lazy alike. Our system should encourage everyone to work hard, not discourage them.</p>
-			</li>
-			<li>
-				<h4>Redistribution is morally wrong.</h4>
-				<p>Taxes are mostly about taking money from those who earn it and giving it to those who don't. Able-bodied people should earn their own money.</p>
-			</li>
-			<li>
-				<h4>There's too much collectivism.</h4>
-				<p>It's gotten way out of control. Taxes should only fund what's absolutely necessary, like national defense, police and fire protection, and the highway system.</p>
-			</li>
-			<li>
-				<h4>We have perfectly good alternatives to excessive taxation.</h4>
-				<p>We have local communities, churches, and charities, and the largesse of the rich &#8211; like when Carnegie built 2,500 public libraries, or the Gates Foundation today.</p>
-			</li>
-			<li>
-				<h4>Taxes are theft.</h4>
-				<p>Taxes are when the government takes your money against your will.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/wQLCYHWvNNc?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/4HkCUNMY1-I?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/-eBo-aTqO7g?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
+		<div>
+			<a href="../list.html#taxes">
+				<h3>
+					<strong>Taxes</strong> should be <span class='up'>cut.</span>
+				</h3>
+			</a>
+			
+			<h4>Reasons Why</h4>
+			<ul>
+				<li id="ap1">
+					<h5>Taxes means throwing money at the problem, encouraging waste and fraud.</h5>
+					<p>Our public school system is a perfect example of the false idea that taxing and spending is the solution to our problems. This approach just makes things worse.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap2">
+					<h5>Taxes undermine self-reliance.</h5>
+					<p>Arbitrary redistribution sends the wrong message to entrepreneurs and the lazy alike. Our system should encourage everyone to work hard, not discourage them.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap3">
+					<h5>Redistribution is morally wrong.</h5>
+					<p>Taxes are mostly about taking money from those who earn it and giving it to those who don't. Able-bodied people should earn their own money.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap4">
+					<h5>There's too much collectivism.</h5>
+					<p>It's gotten way out of control. Taxes should only fund what's absolutely necessary, like national defense, police and fire protection, and the highway system.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap5">
+					<h5>We have perfectly good alternatives to excessive taxation.</h5>
+					<p>We have local communities, churches, and charities, and the largesse of the rich &#8211; like when Carnegie built 2,500 public libraries, or the Gates Foundation today.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap6">
+					<h5>Taxes are theft.</h5>
+					<p>Taxes are when the government takes your money against your will.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vp1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/wQLCYHWvNNc?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Dr. Rand Paul on Taxes, by Rand Paul
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/4HkCUNMY1-I?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							10 Shocking Ways the U.S. Government Wastes Your Money, by Daily Reckoning
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/-eBo-aTqO7g?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Theft &amp; Taxes, by Bryce Beattie
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
 
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>Taxes pay for civilization.</h4>
-				<p>The free market can increase our standard of living, but it doesn't give us civilization &#8211; dignity, protection of the vulnerable, a sound infrastructure, air and water quality, etc.</p>
-			</li>
-			<li>
-				<h4>Taxes make everyone pitch in to solve the big problems.</h4>
-				<p>Anti-tax folks like to say that private giving can solve problems like poverty. But experience shows that charity never solves the big problems.</p>
-			</li>
-			<li>
-				<h4>Taxes are critical to preventing the return of aristocracy.</h4>
-				<p>The Founding Fathers hated the idea of a few families passing down wealth and power from generation to generation.</p>
-			</li>
-			<li>
-				<h4>Cutting taxes means destroying the public systems we've built over the years.</h4>
-				<p>This includes our roads; public schools; social security system; protection of our air, water, food supply, and environment; and on and on.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/7fgtE-AJs-A?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/GNl6nz9GA_A?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/X9N8SB5qZl8?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-		<a href='../list.html#taxes'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
-
+			<h4>Reasons Why Not</h4>
+			<ul>
+				<li id="ac1">
+					<h5>Taxes pay for civilization.</h5>
+					<p>The free market can increase our standard of living, but it doesn't give us civilization &#8211; dignity, protection of the vulnerable, a sound infrastructure, air and water quality, etc.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac2">
+					<h5>Taxes make everyone pitch in to solve the big problems.</h5>
+					<p>Anti-tax folks like to say that private giving can solve problems like poverty. But experience shows that charity never solves the big problems.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac3">
+					<h5>Taxes are critical to preventing the return of aristocracy.</h5>
+					<p>The Founding Fathers hated the idea of a few families passing down wealth and power from generation to generation.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac4">
+					<h5>Cutting taxes means destroying the public systems we've built over the years.</h5>
+					<p>This includes our roads; public schools; social security system; protection of our air, water, food supply, and environment; and on and on.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vc1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/7fgtE-AJs-A?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Do Federal Taxes Reduce Income Inequality? by Brookings Institution
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/GNl6nz9GA_A?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							This Is Why You Pay Your Taxes, by Minute MBA
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/X9N8SB5qZl8?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							How Your Tax Dollars Are Spent - TurboTax Tax Tips Video, by TurboTax
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
+		</div> <!-- END TOPIC -->
+	</div>
 </body>
 </html>

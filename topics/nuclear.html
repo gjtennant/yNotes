@@ -18,99 +18,211 @@
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- This is your tracking code. Copy and paste it into the code of every page you want to track. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
-	<div>
-		<a href="../list.html#nuclear">
-			<h2>
-				We should work to eliminate <strong>nuclear <span class='up'>weapons.</span></strong>
-			</h2>
-		</a>
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>Nukes are useless against terrorists.</h4>
-				<p>Say Al-Qaeda got a hold of a bomb and used it against us. What civilian population would we nuke?</p>
-			</li>
-			<li>
-				<h4>Nukes are not a useful deterrent against fanatics.</h4>
-				<p>The idea of deterrence fails completely in the case of a suicide bomber, or a fanatical state. They don't care about the consequences to themselves.</p>
-			</li>
-			<li>
-				<h4>Nukes aren't needed even against nuclear states.</h4>
-				<p>Imagine that Iran or North Korea actually used a nuclear weapon. We could easily obliterate Teheran or Pyongyang with conventional carpet-bombing.</p>
-			</li>
-			<li>
-				<h4>Conservative statesmen have recognized that nukes make us <em>less</em> safe.</h4>
-				<p>George Shultz, Henry Kissinger, and Ronald Reagan have all argued for the gradual elimination of all nuclear weapons.</p>
-			</li>
-			<li>
-				<h4>Nuclear exchanges can cause nuclear winters.</h4>
-				<p>If India and Pakistan had a nuclear exchange, this could cause enough soot to reach the atmosphere to block sunlight and interrupt the food chain for the whole planet.</p>
-			</li>
-			<li>
-				<h4>Our nukes encourage others to get them.</h4>
-				<p>Iran wouldn't push for nukes if the US and Israel didn't have them. And if we didn't have them, we could easily make sure they didn't either.</p>
-			</li>
-			<li>
-				<h4>Weak states with nukes are a scary prospect.</h4>
-				<p>We'll be sorry we didn't push harder to end the nuclear era if Pakistan ever falls to the Taliban &#8211; or if terrorists steal or buy nukes from Pakistan's army.</p>
-			</li>
-			<li>
-				<h4>Nuclear weapons are designed to kill civilians.</h4>
-				<p>They can't be targeted against military installations because their impact zone is too big. Killing civilians with weapons of mass destruction is a crime against humanity.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/sgFYApuxZ0E?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/bWPRprYF_MA?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/SHZAaGidUbg?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
+		<div>
+			<a href="../list.html#nuclear">
+				<h3>
+					We should work to eliminate <strong>nuclear <span class='up'>weapons.</span></strong>
+				</h3>
+			</a>
+			<h4>Reasons Why</h4>
+			<ul>
+				<li id="ap1">
+					<h5>Nukes are useless against terrorists.</h5>
+					<p>Say Al-Qaeda got a hold of a bomb and used it against us. What civilian population would we nuke?</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap2">
+					<h5>Nukes are not a useful deterrent against fanatics.</h5>
+					<p>The idea of deterrence fails completely in the case of a suicide bomber, or a fanatical state. They don't care about the consequences to themselves.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap3">
+					<h5>Nukes aren't needed even against nuclear states.</h5>
+					<p>Imagine that Iran or North Korea actually used a nuclear weapon. We could easily obliterate Teheran or Pyongyang with conventional carpet-bombing.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap4">
+					<h5>Conservative statesmen have recognized that nukes make us less safe.</h5>
+					<p>George Shultz, Henry Kissinger, and Ronald Reagan have all argued for the gradual elimination of all nuclear weapons.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap5">
+					<h5>Nuclear exchanges can cause nuclear winters.</h5>
+					<p>If India and Pakistan had a nuclear exchange, this could cause enough soot to reach the atmosphere to block sunlight and interrupt the food chain for the whole planet.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap6">
+					<h5>Our nukes encourage others to get them.</h5>
+					<p>Iran wouldn't push for nukes if the US and Israel didn't have them. And if we didn't have them, we could easily make sure they didn't either.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap7">
+					<h5>Weak states with nukes are a scary prospect.</h5>
+					<p>We'll be sorry we didn't push harder to end the nuclear era if Pakistan ever falls to the Taliban &#8211; or if terrorists steal or buy nukes from Pakistan's army.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap8">
+					<h5>Nuclear weapons are designed to kill civilians.</h5>
+					<p>They can't be targeted against military installations because their impact zone is too big. Killing civilians with weapons of mass destruction is a crime against humanity.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vp1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/sgFYApuxZ0E?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							10 Horrifying Facts About Nuclear Weapons, by Alltime10s
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/bWPRprYF_MA?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Nuclear Weapons PSA, by Nitroslaya
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/SHZAaGidUbg?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Cruel Bombs, by Vsauce
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
 
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>Nukes preserve peace.</h4>
-				<p>We haven't had a world war since the introduction of nuclear weapons. This is because of deterrence &#8211; every country is kept in line by the idea of "mutual assured destruction."</p>
-			</li>
-			<li>
-				<h4>The cold war might be coming back.</h4>
-				<p>Russia and China both have been more aggressive of late. This is a bad time to be thinking about getting rid of our nuclear defense.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/Zwb2wU-5aJQ?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/zVSvtXJC0LU?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-
-		<a href='../list.html#nuclear'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
-
+			<h4>Reasons Why Not</h4>
+			<ul>
+				<li id="ac1">
+					<h5>Nukes preserve peace.</h5>
+					<p>We haven't had a world war since the introduction of nuclear weapons. This is because of deterrence &#8211; every country is kept in line by the idea of "mutual assured destruction."</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac2">
+					<h5>The cold war might be coming back.</h5>
+					<p>Russia and China both have been more aggressive of late. This is a bad time to be thinking about getting rid of our nuclear defense.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vc1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/Zwb2wU-5aJQ?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Robert McNamara on the Effectiveness of Nuclear Deterrence, by FORA.tv
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/zVSvtXJC0LU?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Nuclear Deterrence Still Key at STRATCOM, b DoD News
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
+		</div> <!-- END TOPIC -->
+	</div>
 </body>
 </html>

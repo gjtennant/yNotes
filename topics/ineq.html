@@ -18,87 +18,194 @@
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- This is your tracking code. Copy and paste it into the code of every page you want to track. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
-	<div>
-		<a href="../list.html#ineq">
-			<h2>
-				We've reached an unacceptable level of <strong>economic <span class='up'>inequality.</span></strong>
-			</h2>
-		</a>
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>Extreme inequality is bad for democracy.</h4>
-				<p>It's a simple fact that the people who own the country make the decisions. With extreme inequality only few people own the country. This used to be called an aristocracy.</p>
-			</li>
-			<li>
-				<h4>Extreme inequality is the result of a rigged system.</h4>
-				<p>Over the last 30 years people at the top have changed the rules &#8211; in the tax code, in banking rules, in regulatory oversight, etc. &#8211; to create extreme inequality.</p>
-			</li>
-			<li>
-				<h4>Extreme inequality is bad for the economy.</h4>
-				<p>Middle-class people <em>spend</em> most of their money, which boosts the economy. Very rich people don't (it's hard to spend millions every month), which keeps money out of the economy.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/vttbhl_kDoo?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/ik1y4ZNSjek?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/W-J3ymN0K44?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
+		<div>
+			<a href="../list.html#ineq">
+				<h3>
+					We've reached an unacceptable level of <strong>economic <span class='up'>inequality.</span></strong>
+				</h3>
+			</a>
+			<h4>Reasons Why</h4>
+			<ul>
+				<li id="ap1">
+					<h5>Extreme inequality is bad for democracy.</h5>
+					<p>It's a simple fact that the people who own the country make the decisions. With extreme inequality only few people own the country. This used to be called an aristocracy.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap2">
+					<h5>Extreme inequality is the result of a rigged system.</h5>
+					<p>Over the last 30 years people at the top have changed the rules &#8211; in the tax code, in banking rules, in regulatory oversight, etc. &#8211; to create extreme inequality.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap3">
+					<h5>Extreme inequality is bad for the economy.</h5>
+					<p>Middle-class people spend most of their money, which boosts the economy. Very rich people don't (it's hard to spend millions every month), which keeps money out of the economy.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vp1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/vttbhl_kDoo?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Wealth Inequality in America, Perception vs Reality, by CrisisForums.org
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/ik1y4ZNSjek?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Inequality is real, it's personal, it's expensive and it was created, by Economic Policy Institute
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/W-J3ymN0K44?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Inequality and You, by Stuff They Don't Want You To Know - HowStuffWorks
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
 
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>Freedom leads to inequality.</h4>
-				<p>Inequality, even great inequality, is the cost of people being free to make good choices and bad choices. And Freedom is our core American value.</p>
-			</li>
-			<li>
-				<h4>Inequality promotes individual effort.</h4>
-				<p>Human nature dictates that we only give our best when we know that there will be winners and losers. Competition is what has made America great.</p>
-			</li>
-			<li>
-				<h4>The alternative to inequality is Socialism.</h4>
-				<p>Inequality has its dark side, but the alternative is much worse. It's basically government controlling wealth, either by redistributing it or by getting rid of the free market altogether.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/44LHBViTZI0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/0tjwnMYqaeQ?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/KENaWXPmBr0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-		<a href='../list.html#ineq'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
-
+			<h4>Reasons Why Not</h4>
+			<ul>
+				<li id="ac1">
+					<h5>Freedom leads to inequality.</h5>
+					<p>Inequality, even great inequality, is the cost of people being free to make good choices and bad choices. And Freedom is our core American value.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac2">
+					<h5>Inequality promotes individual effort.</h5>
+					<p>Human nature dictates that we only give our best when we know that there will be winners and losers. Competition is what has made America great.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac3">
+					<h5>The alternative to inequality is Socialism.</h5>
+					<p>Inequality has its dark side, but the alternative is much worse. It's basically government controlling wealth, either by redistributing it or by getting rid of the free market altogether.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vc1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/44LHBViTZI0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							What Wasn't Said in "Wealth Inequality In America", by Learn Liberty
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/0tjwnMYqaeQ?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							Bill O'Reilly Discusses "Income Inequality", by USAhistorywriter
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/KENaWXPmBr0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>
+							eEconomics - SPECIAL - Tax Inequality in America, by eEconomics
+						</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
+		</div> <!-- END TOPIC -->
+	</div>
 </body>
 </html>

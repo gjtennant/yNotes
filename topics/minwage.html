@@ -11,114 +11,244 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 
 	<!-- Normalize hide address bar for iOS and Android -->
-	<script src='../assets/js/hideaddressbar.js'></script>
+	<script src="../assets/js/hideaddressbar.js"></script>
 
 	<!-- Shim to force HTML5 recognition: -->
 	<!--[if lt IE 9]>
 		<script src="../assets/js/html5shiv.js"></script>
 	<![endif]-->
 
+	<!-- sharethis.com share button scripts
+	<script type="text/javascript">
+		var switchTo5x=true;
+	</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">
+		stLight.options({publisher: "5e620ea8-9d06-4614-938d-2ca787156803", doNotHash: false, doNotCopy: false, hashAddressBar: false});
+	</script> -->
+
+	<!-- Local jQuery -->
+	<script src="../assets/js/jquery-1.11.3.min.js"></script>
+
+	<script>
+		$(document).ready(function(){
+			// email argument-sharing machine
+			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+				var subject = $(this).parent().siblings("h5").html();
+				var body = $(this).parent().siblings("p").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// email video-sharing machine
+			$(".share-mail-vid a").click(function(){
+				var body = $(this).parent().siblings("figure").children("figcaption").html();
+				var url = window.location.href
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+		});
+	</script>
+
+	<!-- Google tracking code. Add it to every page you want to track, just before the closing head tag. -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66683468-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
 </head>
 <body>
-	<header></header>
 
-	<div>
-		<a href="../list.html#minwage">
-			<h2>
-				The <strong>minimum wage</strong> should be enough to live <span class='up'>on.</span>
-			</h2>
-		</a>
-		<h3>Reasons Why</h3>
-		<ul>
-			<li>
-				<h4>A poverty wage means taxpayers like you have to pay for the food stamps.</h4>
-				<p>Wouldn't it be simpler and more honest to just pay people enough to live on?</p>
-			</li>
-			<li>
-				<h4>Why should I subsidize rich employers like McDonalds or Walmart?</h4>
-				<p>Food stamps are a pillar of these employers' business model. They pay too little, knowing that the taxpayers will pay the rest.</p>
-			</li>
-			<li>
-				<h4>If full-time workers qualify for food stamps, the minimum wage is too low.</h4>
-				<p>A poverty wage is when full-time workers need assistance from the government &#8211; like food stamps, Medicaid, and housing benefits &#8211; to make ends meet.</p>
-			</li>
-			<li>
-				<h4>The purpose of the minimum wage is to prevent exploitation.</h4>
-				<p>In this sense, minimum wage laws are like workplace safety regulations.</p>
-			</li>
-			<li>
-				<h4>Yes, it's designed to kill jobs &#8211; sweatshop jobs.</h4>
-				<p>If your business can only thrive by exploiting workers, then you shouldn't be in business.</p>
-			</li>
-			<li>
-				<h4>Raising the minimum wage will actually boost the economy.</h4>
-				<p>Every extra dollar that low-income workers earn is spent. Basic economics tells us that more spending means more jobs, with ripple effects across the economy.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/eLVFqri-bf4?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/GOqtl53V3JI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/ZleBA7_r_TI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>		
-	
-		<h3>Reasons Why Not</h3>
-		<ul>
-			<li>
-				<h4>They don't deserve it.</h4>
-				<p>Not every worker is worth the same amount. It's crazy to tell business owners that every retail clerk or burger flipper is worth, say, $15 per hour.</p>
-			</li>
-			<li>
-				<h4>What about the folks who currently earn, say, $15?</h4>
-				<p>Raising the minimum wage will be unfair to skilled workers who will be earning no more than unskilled workers.</p>
-			</li>
-			<li>
-				<h4>It will cause inflation.</h4>
-				<p>Raising the minimum wage hurts middle-class people, because it will mean higher prices for things that are already expensive, like food and clothing.</p>
-			</li>
-			<li>
-				<h4>Raising the minimum wage will kill jobs.</h4>
-				<p>Small businesses are America's real job creators. And when small business owners are forced to pay higher wages, that forces them to lay off workers or stop hiring.</p>
-			</li>
-			<li>
-				<h4>Let the Market set the wage.</h4>
-				<p>Wages go up or down with the economy. Politicians should be working on getting the economy in better shape instead of burdening busineses with higher costs.</p>
-			</li>
-		</ul>
-		<ul class='vids'>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/siW0YAAfX6I?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/h7grXSzxxxA?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-			<li>
-				<figure>
-					<iframe class='youtube' src="https://youtube.com/embed/bkh6ovLgUWE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
-				</figure>
-			</li>
-		</ul>
-		<a href='../list.html#minwage'>
-			<div class='closetopic'>
-				Close Topic
-			</div>
-		</a>
-	</div> <!-- END TOPIC -->
+	<div class="container">
+		<div class="whitebar"></div>
+ 		<header>
+			<nav>
+				<a href="../mission.html">
+					What is yNotes?
+				</a>
+				<span style="color:#CBBFB6;">
+				 | 
+				</span>
+				<a href="../list.html">
+					All Topics
+				</a>	
+			</nav>
+		</header>
 
+		<div>
+			<a href="../list.html#minwage">
+				<h3>
+					The <strong>minimum wage</strong> should be enough to live <span class='up'>on.</span>
+				</h3>
+			</a>
+			<h4>Reasons Why</h4>
+			<ul>
+				<li id="ap1">
+					<h5>A poverty wage means taxpayers like you have to pay for the food stamps.</h5>
+					<p>Wouldn't it be simpler and more honest to just pay people enough to live on?</p>
+					<!-- AddThis share buttons -->
+					<!-- <div class="addthis_sharing_toolbox"></div> -->
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap2">
+					<h5>Why should I subsidize rich employers like McDonalds or Walmart?</h5>
+					<p>Food stamps are a pillar of these employers' business model. They pay too little, knowing that the taxpayers will pay the rest.</p>
+					<!-- AddThis share buttons -->
+					<!-- <div class="addthis_sharing_toolbox"></div> -->
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap3">
+					<h5>If full-time workers qualify for food stamps, the minimum wage is too low.</h5>
+					<p>A poverty wage is when full-time workers need assistance from the government &#8211; like food stamps, Medicaid, and housing benefits &#8211; to make ends meet.</p>
+					<!-- AddThis share buttons -->
+					<!-- <div class="addthis_sharing_toolbox"></div> -->
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap4">
+					<h5>The purpose of the minimum wage is to prevent exploitation.</h5>
+					<p>In this sense, minimum wage laws are like workplace safety regulations.</p>
+					<!-- AddThis share buttons -->
+					<!-- <div class="addthis_sharing_toolbox"></div> -->
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap5">
+					<h5>Yes, it's designed to kill jobs &#8211; sweatshop jobs.</h5>
+					<p>If your business can only thrive by exploiting workers, then you shouldn't be in business.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ap6">
+					<h5>Raising the minimum wage will actually boost the economy.</h5>
+					<p>Every extra dollar that low-income workers earn is spent. Basic economics tells us that more spending means more jobs, with ripple effects across the economy.</p>
+					<div class="share-mail-arg">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vp1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/eLVFqri-bf4?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>Why We Shouldn't Raise The Minimum Wage, by Buzzfeed Yellow</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/GOqtl53V3JI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>Raise the Minimum Wage to $15 Per Hour, by MoveOn.org</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vp3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/ZleBA7_r_TI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>Boost or Bust: Jobs and Places, by ToposPartnership</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>		
+		
+			<h4>Reasons Why Not</h4>
+			<ul>
+				<li id="ac1">
+					<h5>They don't deserve it.</h5>
+					<p>Not every worker is worth the same amount. It's crazy to tell business owners that every retail clerk or burger flipper is worth, say, $15 per hour.</p>
+					<div class="share-mail-alt">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac2">
+					<h5>What about the folks who currently earn, say, $15?</h5>
+					<p>Raising the minimum wage will be unfair to skilled workers who will be earning no more than unskilled workers.</p>
+					<div class="share-mail-alt">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac3">
+					<h5>It will cause inflation.</h5>
+					<p>Raising the minimum wage hurts middle-class people, because it will mean higher prices for things that are already expensive, like food and clothing.</p>
+					<div class="share-mail-alt">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac4">
+					<h5>Raising the minimum wage will kill jobs.</h5>
+					<p>Small businesses are America's real job creators. And when small business owners are forced to pay higher wages, that forces them to lay off workers or stop hiring.</p>
+					<div class="share-mail-alt">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="ac5">
+					<h5>Let the Market set the wage.</h5>
+					<p>Wages go up or down with the economy. Politicians should be working on getting the economy in better shape instead of burdening businesses with higher costs.</p>
+					<div class="share-mail-alt">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="vids">
+				<li id="vc1">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/siW0YAAfX6I?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>The Truth about the Minimum Wage, by feeseminars</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc2">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/h7grXSzxxxA?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>Seattle’s $15 Minimum Wage Law Just Came Back To Bite Them In A Totally Unexpected Way, by ENews</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+				<li id="vc3">
+					<figure>
+						<iframe class='youtube' src="https://youtube.com/embed/bkh6ovLgUWE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
+						<figcaption>Bill Gates on the risks of raising the minimum wage, by American Enterprise Institute</figcaption>
+					</figure>
+					<div class="share-mail-vid">
+						<a href="">Share</a>
+					</div>
+				</li>
+			</ul>
+			<footer>
+				<nav>
+					<a href='#'>
+						Back to Top ^
+					</a>
+				</nav>
+			</footer>
+		</div> <!-- END TOPIC -->
+	</div> <!-- close container -->
+	<!-- AddThis activator code; add it to your site right before the closing body tag. Go to www.addthis.com/dashboard to customize your tools -->
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55dbbd2cbec1dfb3" async="async"></script>
 </body>
 </html>
