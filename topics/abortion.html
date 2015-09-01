@@ -24,20 +24,36 @@
 	<script>
 		$(document).ready(function(){
 			// email argument-sharing machine
-			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+			$(".mail-arg a, .mail-alt a").click(function(){
 				var subject = $(this).parent().siblings("h5").html();
 				var body = $(this).parent().siblings("p").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A\r\n\r\nSee the full conversation at yNotes: " + String(url) + "#" + String(id);
 				$(this).attr("href", String(newhref));
 			});
 			// email video-sharing machine
-			$(".share-mail-vid a").click(function(){
+			$(".mail-vid a").click(function(){
 				var body = $(this).parent().siblings("figure").children("figcaption").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A\r\n\r\n" + String(body) + " %0D%0A%0D%0A\r\n\r\n" + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// tweet argument-sharing machine - specific to each page!!
+			$(".tweet-arg a").click(function(){
+				var text = $(this).parent().siblings("h5").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/abortion.html%23" + id;
+				$(this).attr("href", String(newhref));
+			});
+			// tweet video-sharing machine - specific to each page!!
+			$(".tweet-vid a").click(function(){
+				var text = $(this).parent().siblings("figure").children("figcaption").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/abortion.html%23" + id;
 				$(this).attr("href", String(newhref));
 			});
 		});
@@ -85,29 +101,41 @@
 					<li id="ap1">
 						<h5>It will be a person very soon.</h5>
 						<p>It doesn't make sense that a fetus a few weeks away from personhood should have no rights. In the case of human beings, shouldn't we err on the side of caution?</p>
-						<div class="share-mail-arg">
-							<a href="">Share</a>
+						<div class="mail-arg">
+							<a href="">Email</a>
+						</div>
+						<div class="tweet-arg">
+							<a href="" target="_blank">Tweet</a>
 						</div>
 					</li>
 					<li id="ap2">
 						<h5>The fetus can feel pain even before it becomes a full person.</h5>
 						<p>Protection from harm should be based on the capacity to suffer. That rule should apply to fetuses as well as animals.</p>
-						<div class="share-mail-arg">
-							<a href="">Share</a>
+						<div class="mail-arg">
+							<a href="">Email</a>
+						</div>
+						<div class="tweet-arg">
+							<a href="" target="_blank">Tweet</a>
 						</div>
 					</li>
 					<li id="ap3">
 						<h5>Abortion is not part of God's plan.</h5>
 						<p>Fertilization is a clear expression of God's intention to produce a baby.</p>
-						<div class="share-mail-arg">
-							<a href="">Share</a>
+						<div class="mail-arg">
+							<a href="">Email</a>
+						</div>
+						<div class="tweet-arg">
+							<a href="" target="_blank">Tweet</a>
 						</div>
 					</li>
 					<li id="ap4">
 						<h5>A fetus, even an embryo, has rights as a member of the human species.</h5>
 						<p>It really doesn't matter whether the fetus is a "person," in the conventional sense of being developed enough to look like a person.</p>
-						<div class="share-mail-arg">
-							<a href="">Share</a>
+						<div class="mail-arg">
+							<a href="">Email</a>
+						</div>
+						<div class="tweet-arg">
+							<a href="" target="_blank">Tweet</a>
 						</div>
 					</li>
 				</ul>
@@ -119,8 +147,11 @@
 								Pro-Life Truth &#8211; 7 Ways to Silence Your Liberal Professor, by tfpstudentaction
 							</figcaption>
 						</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 					</li>
 					<li id="vp2">
@@ -130,8 +161,11 @@
 								Pro-life Video &#8211; Choose Life, by HyperPixelsMedia
 							</figcaption>
 						</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 					</li>
 					<li id="vp3">
@@ -141,8 +175,11 @@
 								Pro-life Anti-abortion Advert &#8211; Beautiful footage of an unborn baby with a powerful message, by Youth Defence
 							</figcaption>
 						</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 					</li>
 				</ul>
@@ -154,15 +191,21 @@
 					<li id="ac1">
 						<h5>We don't know when a fetus becomes a person.</h5>
 						<p>Therefore abortion, especially early-stage abortion, should be an individual choice &#8211; based on a woman's conscience, not on government dictates.</p>
-						<div class="share-mail-arg">
-							<a href="">Share</a>
+						<div class="mail-arg">
+							<a href="">Email</a>
+						</div>
+						<div class="tweet-arg">
+							<a href="" target="_blank">Tweet</a>
 						</div>
 					</li>
 					<li id="ac2">
 						<h5>A woman has the right to make choices about her own body.</h5>
 						<p>Pregnancy is a physiological process. A woman's body determines whether the zygote will implant and whether the fetus will be carried to term.</p>
-						<div class="share-mail-arg">
-							<a href="">Share</a>
+						<div class="mail-arg">
+							<a href="">Email</a>
+						</div>
+						<div class="tweet-arg">
+							<a href="" target="_blank">Tweet</a>
 						</div>
 					</li>
 				</ul>
@@ -175,8 +218,11 @@
 								Said No Woman, by UltravioletAction
 							</figcaption>
 						</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 					</li>
 					<li id="vc2">
@@ -186,8 +232,11 @@
 								Ultraviolet &#8211; Like, by UltravioletAction
 							</figcaption>
 						</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 					</li>
 					<li id="vc3">
@@ -197,8 +246,11 @@
 								End of Pretending, by UltravioletAction
 							</figcaption>
 						</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 					</li>
 				</ul>

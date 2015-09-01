@@ -25,20 +25,36 @@
 	<script>
 		$(document).ready(function(){
 			// email argument-sharing machine
-			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+			$(".mail-arg a, .mail-alt a").click(function(){
 				var subject = $(this).parent().siblings("h5").html();
 				var body = $(this).parent().siblings("p").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A\r\n\r\nSee the full conversation at yNotes: " + String(url) + "#" + String(id);
 				$(this).attr("href", String(newhref));
 			});
 			// email video-sharing machine
-			$(".share-mail-vid a").click(function(){
+			$(".mail-vid a").click(function(){
 				var body = $(this).parent().siblings("figure").children("figcaption").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A\r\n\r\n" + String(body) + " %0D%0A%0D%0A\r\n\r\n" + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// tweet argument-sharing machine - specific to each page!!
+			$(".tweet-arg a").click(function(){
+				var text = $(this).parent().siblings("h5").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/immigration.html%23" + id;
+				$(this).attr("href", String(newhref));
+			});
+			// tweet video-sharing machine - specific to each page!!
+			$(".tweet-vid a").click(function(){
+				var text = $(this).parent().siblings("figure").children("figcaption").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/immigration.html%23" + id;
 				$(this).attr("href", String(newhref));
 			});
 		});
@@ -84,36 +100,51 @@
 				<li id="ap1">
 					<h5>They're fundamental laws.</h5>
 					<p>What more basic law can a nation have than those that give control over its borders?</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap2">
 					<h5>We don't actually need more immigrants.</h5>
 					<p>We don't need to populate empty lands or factories. And we've got plenty of diversity at this point.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap3">
 					<h5>Ignoring immigration laws is not civil disobedience.</h5>
 					<p>Civil rights workers were making a statement of conscience, and willing to go to jail for their beliefs. People who violate our immigration laws are acting out of self-interest.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap4">
 					<h5>Uncontrolled immigration is a clear and present danger to our country.</h5>
 					<p>Overpopulation threatens our environment. Unassimilated populations threaten our institutions, including our schools and language. Poor immigrants lower wages, drain social services, and increase crime.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap5">
 					<h5>Illegal immigration leads to exploitation of a vulnerable group.</h5>
 					<p>US employers take advantage of illegal immigrants. The best way to stop this exploitation is to enforce our immigration laws.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -126,8 +157,11 @@
 							Facts SD 04, by theaicontrol
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp2">
@@ -137,8 +171,11 @@
 							Off The Charts with Roy Beck (abridged version &#8211; 2010), by NumbersUSA
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp3">
@@ -148,8 +185,11 @@
 							Who should get the next U.S. jobs? More new immigrants or America's jobless? by NumbersUSA
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -159,50 +199,71 @@
 				<li id="ac1">
 					<h5>Illegal immigrants are a pillar of our economy.</h5>
 					<p>Multiply 10 million workers by 2,000 hours per year by $5 per hour (or more) that they're underpaid. That adds up to a $100 billion gift to our economy &#8211; far more than what they cost us in services.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac2">
 					<h5>Most illegal immigrants are Americans in all but name.</h5>
 					<p>These are folks who've been here most of their lives, are law-abiding, speak English, go to school, and pay taxes.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac3">
 					<h5>Immigrants contribute a lot to our society.</h5>
 					<p>They're incredibly motivated, hard-working, and resourceful individuals. It's what made us great and what will continue to make us great.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac4">
 					<h5>We invited them here.</h5>
 					<p>We ask illegal immigrants to work &#8211; in our fields, restaurants, and homes. It seems hypocritical to invite them in and then try to kick them out.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac5">
 					<h5>Immigration laws promote exploitation of a vulnerable group.</h5>
 					<p>The best way to prevent this exploitation is to give illegal immigrants a path to citizenship.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac6">
 					<h5>We're all immigrants.</h5>
 					<p>The vast majority of Americans are immigrants or descended from immigrants. It seems hypocritical to pull up the ladder now that we're safely aboard. </p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac7">
 					<h5>It's inhumane to deport illegal immigrants.</h5>
 					<p>They don't have a home anywhere else, it breaks up families, and many of these immigrants would be put into very dangerous situations by being deported to their home countries.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -215,8 +276,11 @@
 							"I Didn't Say Goodbye" - Immigration PSA by Claudia Victoria Lemus
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc2">
@@ -226,8 +290,11 @@
 							illegal immigration PSA by Danna Forero
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc3">
@@ -237,8 +304,11 @@
 							"Do I look Illegal?" A question for Arizona (PSA) by EKG Films
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>

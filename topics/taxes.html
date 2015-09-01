@@ -24,20 +24,36 @@
 	<script>
 		$(document).ready(function(){
 			// email argument-sharing machine
-			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+			$(".mail-arg a, .mail-alt a").click(function(){
 				var subject = $(this).parent().siblings("h5").html();
 				var body = $(this).parent().siblings("p").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A\r\n\r\nSee the full conversation at yNotes: " + String(url) + "#" + String(id);
 				$(this).attr("href", String(newhref));
 			});
 			// email video-sharing machine
-			$(".share-mail-vid a").click(function(){
+			$(".mail-vid a").click(function(){
 				var body = $(this).parent().siblings("figure").children("figcaption").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A\r\n\r\n" + String(body) + "%0D%0A%0D%0A\r\n\r\n" + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// tweet argument-sharing machine - specific to each page!!
+			$(".tweet-arg a").click(function(){
+				var text = $(this).parent().siblings("h5").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/taxes.html%23" + id;
+				$(this).attr("href", String(newhref));
+			});
+			// tweet video-sharing machine - specific to each page!!
+			$(".tweet-vid a").click(function(){
+				var text = $(this).parent().siblings("figure").children("figcaption").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/taxes.html%23" + id;
 				$(this).attr("href", String(newhref));
 			});
 		});
@@ -85,43 +101,61 @@
 				<li id="ap1">
 					<h5>Taxes means throwing money at the problem, encouraging waste and fraud.</h5>
 					<p>Our public school system is a perfect example of the false idea that taxing and spending is the solution to our problems. This approach just makes things worse.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap2">
 					<h5>Taxes undermine self-reliance.</h5>
 					<p>Arbitrary redistribution sends the wrong message to entrepreneurs and the lazy alike. Our system should encourage everyone to work hard, not discourage them.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap3">
 					<h5>Redistribution is morally wrong.</h5>
 					<p>Taxes are mostly about taking money from those who earn it and giving it to those who don't. Able-bodied people should earn their own money.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap4">
 					<h5>There's too much collectivism.</h5>
 					<p>It's gotten way out of control. Taxes should only fund what's absolutely necessary, like national defense, police and fire protection, and the highway system.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap5">
 					<h5>We have perfectly good alternatives to excessive taxation.</h5>
 					<p>We have local communities, churches, and charities, and the largesse of the rich &#8211; like when Carnegie built 2,500 public libraries, or the Gates Foundation today.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap6">
 					<h5>Taxes are theft.</h5>
 					<p>Taxes are when the government takes your money against your will.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -133,8 +167,11 @@
 							Dr. Rand Paul on Taxes, by Rand Paul
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp2">
@@ -144,8 +181,11 @@
 							10 Shocking Ways the U.S. Government Wastes Your Money, by Daily Reckoning
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp3">
@@ -155,8 +195,11 @@
 							Theft &amp; Taxes, by Bryce Beattie
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -166,29 +209,41 @@
 				<li id="ac1">
 					<h5>Taxes pay for civilization.</h5>
 					<p>The free market can increase our standard of living, but it doesn't give us civilization &#8211; dignity, protection of the vulnerable, a sound infrastructure, air and water quality, etc.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac2">
 					<h5>Taxes make everyone pitch in to solve the big problems.</h5>
 					<p>Anti-tax folks like to say that private giving can solve problems like poverty. But experience shows that charity never solves the big problems.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac3">
 					<h5>Taxes are critical to preventing the return of aristocracy.</h5>
 					<p>The Founding Fathers hated the idea of a few families passing down wealth and power from generation to generation.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac4">
 					<h5>Cutting taxes means destroying the public systems we've built over the years.</h5>
 					<p>This includes our roads; public schools; social security system; protection of our air, water, food supply, and environment; and on and on.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -200,8 +255,11 @@
 							Do Federal Taxes Reduce Income Inequality? by Brookings Institution
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc2">
@@ -211,8 +269,11 @@
 							This Is Why You Pay Your Taxes, by Minute MBA
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc3">
@@ -222,8 +283,11 @@
 							How Your Tax Dollars Are Spent - TurboTax Tax Tips Video, by TurboTax
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>

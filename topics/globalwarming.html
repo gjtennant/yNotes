@@ -25,20 +25,36 @@
 	<script>
 		$(document).ready(function(){
 			// email argument-sharing machine
-			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+			$(".mail-arg a, .mail-alt a").click(function(){
 				var subject = $(this).parent().siblings("h5").html();
 				var body = $(this).parent().siblings("p").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A\r\n\r\nSee the full conversation at yNotes: " + String(url) + "#" + String(id);
 				$(this).attr("href", String(newhref));
 			});
 			// email video-sharing machine
-			$(".share-mail-vid a").click(function(){
+			$(".mail-vid a").click(function(){
 				var body = $(this).parent().siblings("figure").children("figcaption").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A\r\n\r\n" + String(body) + "%0D%0A%0D%0A\r\n\r\n" + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// tweet argument-sharing machine - specific to each page!!
+			$(".tweet-arg a").click(function(){
+				var text = $(this).parent().siblings("h5").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/globalwarming.html%23" + id;
+				$(this).attr("href", String(newhref));
+			});
+			// tweet video-sharing machine - specific to each page!!
+			$(".tweet-vid a").click(function(){
+				var text = $(this).parent().siblings("figure").children("figcaption").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/globalwarming.html%23" + id;
 				$(this).attr("href", String(newhref));
 			});
 		});
@@ -86,57 +102,81 @@
 				<li id="ap1">
 					<h5>The scientific consensus leaves no room for doubt.</h5>
 					<p>The national academies of science in every major country all agree that carbon pollution is causing global warming and should be reduced immediately.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap2">
 					<h5>There's a very high risk that we're causing a worldwide catastrophe.</h5>
 					<p>Would you let your family drink water that 9 out of 10 tests said was poisoned? Would you ridicule scientists who tried to raise the alarm about it?</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap3">
 					<h5>The issue of global warming is like where smoking was 25 years ago.</h5>
 					<p>Just like the tobacco industry used to do, the fossil fuel industry pays "experts" to muddy the waters &#8211; so profits can roll in a little while longer.
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap4">
 					<h5>Even the oil companies are saying global warming is caused by people.</h5>
 					<p>If the CEOs of Shell Oil and Exxon-Mobil agree with the science &#8211; not to mention the Pope and the President of the United States &#8211; where does that leave you?</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap5">
 					<h5>The Bible tells us to be concerned about global warming.</h5>
 					<p>God appointed mankind to be steward of this world (Genesis 1:28). What more important stewardship decision is there than addressing global warming?</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap6">
 					<h5>Carbon pollution is causing acidification of the oceans.</h5>
 					<p>A more acidic ocean dissolves the calcium shells of plankton, the base of the ocean's entire food chain.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap7">
-					<h5>It's time to have Congressional hearings about the global warming "hoax."</h5>
+					<h5>It's time to have Congressional hearings about the global warming 'hoax.'</h5>
 					<p>Is there a conspiracy by the world's scientists to destroy our economy, or by industry to put civilization at risk for a few extra years of profit?</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap8">
 					<h5>The catastrophe will hit the world's poor first and hardest.</h5>
 					<p>Allowing hundreds of millions of people to die from extreme weather events caused by our carbon pollution will make us the greatest mass murderers in History.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -148,8 +188,11 @@
 							William Shatner - Sierra Club Global Warming PSA, by NationalSierraClub
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp2">
@@ -159,8 +202,11 @@
 							Tidal Flooding and Sea Level Rise: The Growing Impacts of Global Warming, by Union of Concerned Scientists
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp3">
@@ -170,8 +216,11 @@
 							The Easiest Way to Slow Climate Change, by Earthjustice
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -181,64 +230,91 @@
 				<li id="ac1">
 					<h5>There will be technological fixes to the problem of global warming.</h5>
 					<p>Research is being conducted into solutions like carbon capture and geo-engineering, as well as alternative energy. We need to let innovation take its course.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac2">
 					<h5>The people in charge don't seem concerned about global warming.</h5>
 					<p>If the Cold War were back, our leaders would be making it a priority. In the case of global warming, we hear lip service but no real urgency.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac3">
 					<h5>Science changes its mind all the time.</h5>
 					<p>Is fat good or bad for you? What about carbs or salt? Chances are that the alarm over global warming is another hysteria that will fade with time.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac4">
 					<h5>It's a conspiracy by scientists.</h5>
 					<p>Mainstream scientists are a tight-knit community controlling grants and publishing. This is the perfect recipe for reinforcing a false consensus on global warming.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac5">
 					<h5>It's a conspiracy by proponents of World Government.</h5>
 					<p>Agreeing with the alarmists on global warming means giving more power &#8211; perhaps emergency powers &#8211; to our government, and even to international organizations like the UN.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac6">
 					<h5>Some scientists disagree with the consensus.</h5>
 					<p>Every scientific breakthrough is achieved by scientists who buck the conventional wisdom. The minority of scientists who disagree with the conventional theory of human-caused global warming may well be right.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac7">
 					<h5>Science doesn't really understand climate change very well.</h5>
 					<p>This means we shouldn't rush to conclusions and certainly not risk damaging our already fragile economy with overreactions to a problem that may turn out to be nothing.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac8">
 					<h5>The Bible says that we shouldn't hold Nature higher than God.</h5>
 					<p>Environmentalism has a tendency to become a form of idolatry, where the "rights" of animals and an inanimate planet are held in higher esteem than God (Romans 1:25).</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac9">
 					<h5>The idea that humans have the power to change Earth's climate is absurd.</h5>
 					<p>The climate is too big, and too complex, and humans are far too small and insignificant.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -250,8 +326,11 @@
 							Settling the Global Warming Debate in 90 Seconds, by HeartlandTube
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 					<li id="vc2">
@@ -261,8 +340,11 @@
 							Resisting the Green Dragon full promo, by Cornwall Alliance
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc3">
@@ -272,8 +354,11 @@
 							Freeman Dyson Blasts Global Warming Alarmism, by 1000frolly
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>

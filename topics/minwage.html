@@ -33,20 +33,36 @@
 	<script>
 		$(document).ready(function(){
 			// email argument-sharing machine
-			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+			$(".mail-arg a").click(function(){
 				var subject = $(this).parent().siblings("h5").html();
 				var body = $(this).parent().siblings("p").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A\r\n\r\nSee the full conversation at yNotes: " + String(url) + "#" + String(id);
 				$(this).attr("href", String(newhref));
 			});
 			// email video-sharing machine
-			$(".share-mail-vid a").click(function(){
+			$(".mail-vid a").click(function(){
 				var body = $(this).parent().siblings("figure").children("figcaption").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A\r\n\r\n" + String(body) + " %0D%0A%0D%0A\r\n\r\n" + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// tweet argument-sharing machine - specific to each page!!
+			$(".tweet-arg a").click(function(){
+				var text = $(this).parent().siblings("h5").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/minwage.html%23" + id;
+				$(this).attr("href", String(newhref));
+			});
+			// tweet video-sharing machine - specific to each page!!
+			$(".tweet-vid a").click(function(){
+				var text = $(this).parent().siblings("figure").children("figcaption").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/minwage.html%23" + id;
 				$(this).attr("href", String(newhref));
 			});
 		});
@@ -96,8 +112,11 @@
 					<p>Wouldn't it be simpler and more honest to just pay people enough to live on?</p>
 					<!-- AddThis share buttons -->
 					<!-- <div class="addthis_sharing_toolbox"></div> -->
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap2">
@@ -105,8 +124,11 @@
 					<p>Food stamps are a pillar of these employers' business model. They pay too little, knowing that the taxpayers will pay the rest.</p>
 					<!-- AddThis share buttons -->
 					<!-- <div class="addthis_sharing_toolbox"></div> -->
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap3">
@@ -114,8 +136,11 @@
 					<p>A poverty wage is when full-time workers need assistance from the government &#8211; like food stamps, Medicaid, and housing benefits &#8211; to make ends meet.</p>
 					<!-- AddThis share buttons -->
 					<!-- <div class="addthis_sharing_toolbox"></div> -->
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap4">
@@ -123,22 +148,31 @@
 					<p>In this sense, minimum wage laws are like workplace safety regulations.</p>
 					<!-- AddThis share buttons -->
 					<!-- <div class="addthis_sharing_toolbox"></div> -->
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap5">
 					<h5>Yes, it's designed to kill jobs &#8211; sweatshop jobs.</h5>
 					<p>If your business can only thrive by exploiting workers, then you shouldn't be in business.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap6">
 					<h5>Raising the minimum wage will actually boost the economy.</h5>
 					<p>Every extra dollar that low-income workers earn is spent. Basic economics tells us that more spending means more jobs, with ripple effects across the economy.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -148,8 +182,11 @@
 						<iframe class='youtube' src="https://youtube.com/embed/eLVFqri-bf4?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
 						<figcaption>Why We Shouldn't Raise The Minimum Wage, by Buzzfeed Yellow</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp2">
@@ -157,8 +194,11 @@
 						<iframe class='youtube' src="https://youtube.com/embed/GOqtl53V3JI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
 						<figcaption>Raise the Minimum Wage to $15 Per Hour, by MoveOn.org</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp3">
@@ -166,8 +206,11 @@
 						<iframe class='youtube' src="https://youtube.com/embed/ZleBA7_r_TI?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
 						<figcaption>Boost or Bust: Jobs and Places, by ToposPartnership</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>		
@@ -177,36 +220,51 @@
 				<li id="ac1">
 					<h5>They don't deserve it.</h5>
 					<p>Not every worker is worth the same amount. It's crazy to tell business owners that every retail clerk or burger flipper is worth, say, $15 per hour.</p>
-					<div class="share-mail-alt">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac2">
 					<h5>What about the folks who currently earn, say, $15?</h5>
 					<p>Raising the minimum wage will be unfair to skilled workers who will be earning no more than unskilled workers.</p>
-					<div class="share-mail-alt">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac3">
 					<h5>It will cause inflation.</h5>
 					<p>Raising the minimum wage hurts middle-class people, because it will mean higher prices for things that are already expensive, like food and clothing.</p>
-					<div class="share-mail-alt">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac4">
 					<h5>Raising the minimum wage will kill jobs.</h5>
 					<p>Small businesses are America's real job creators. And when small business owners are forced to pay higher wages, that forces them to lay off workers or stop hiring.</p>
-					<div class="share-mail-alt">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac5">
 					<h5>Let the Market set the wage.</h5>
 					<p>Wages go up or down with the economy. Politicians should be working on getting the economy in better shape instead of burdening businesses with higher costs.</p>
-					<div class="share-mail-alt">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -216,8 +274,11 @@
 						<iframe class='youtube' src="https://youtube.com/embed/siW0YAAfX6I?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
 						<figcaption>The Truth about the Minimum Wage, by feeseminars</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc2">
@@ -225,8 +286,11 @@
 						<iframe class='youtube' src="https://youtube.com/embed/h7grXSzxxxA?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
 						<figcaption>Seattle’s $15 Minimum Wage Law Just Came Back To Bite Them In A Totally Unexpected Way, by ENews</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc3">
@@ -234,8 +298,11 @@
 						<iframe class='youtube' src="https://youtube.com/embed/bkh6ovLgUWE?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
 						<figcaption>Bill Gates on the risks of raising the minimum wage, by American Enterprise Institute</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>

@@ -24,20 +24,36 @@
 	<script>
 		$(document).ready(function(){
 			// email argument-sharing machine
-			$(".share-mail-arg a, .share-mail-alt a").click(function(){
+			$(".mail-arg a, .mail-alt a").click(function(){
 				var subject = $(this).parent().siblings("h5").html();
 				var body = $(this).parent().siblings("p").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A See the full conversation at yNotes: " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) " + String(subject) + "&body=" + String(body) + "%0D%0A%0D%0A\r\n\r\nSee the full conversation at yNotes: " + String(url) + "#" + String(id);
 				$(this).attr("href", String(newhref));
 			});
 			// email video-sharing machine
-			$(".share-mail-vid a").click(function(){
+			$(".mail-vid a").click(function(){
 				var body = $(this).parent().siblings("figure").children("figcaption").html();
-				var url = window.location.href
+				var url = window.location.href;
 				var id = $(this).parent().parent().attr("id");
-				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A" + String(body) + " %0D%0A%0D%0A " + String(url) + "#" + String(id);
+				var newhref = "mailto:?subject=(yNotes) Video share&body=I saw this video on yNotes: %0D%0A%0D%0A\r\n\r\n" + String(body) + "%0D%0A%0D%0A\r\n\r\n" + String(url) + "#" + String(id);
+				$(this).attr("href", String(newhref));
+			});
+			// tweet argument-sharing machine - specific to each page!!
+			$(".tweet-arg a").click(function(){
+				var text = $(this).parent().siblings("h5").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/ineq.html%23" + id;
+				$(this).attr("href", String(newhref));
+			});
+			// tweet video-sharing machine - specific to each page!!
+			$(".tweet-vid a").click(function(){
+				var text = $(this).parent().siblings("figure").children("figcaption").html();
+				// var url = window.location.href; //Twitter doesn't seem to like doing this, sadly
+				var id = $(this).parent().parent().attr("id");
+				var newhref = "https://twitter.com/intent/tweet?text=%22" + text + "%22&url=http://ynotes.net/topics/ineq.html%23" + id;
 				$(this).attr("href", String(newhref));
 			});
 		});
@@ -84,22 +100,31 @@
 				<li id="ap1">
 					<h5>Extreme inequality is bad for democracy.</h5>
 					<p>It's a simple fact that the people who own the country make the decisions. With extreme inequality only few people own the country. This used to be called an aristocracy.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap2">
 					<h5>Extreme inequality is the result of a rigged system.</h5>
 					<p>Over the last 30 years people at the top have changed the rules &#8211; in the tax code, in banking rules, in regulatory oversight, etc. &#8211; to create extreme inequality.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ap3">
 					<h5>Extreme inequality is bad for the economy.</h5>
 					<p>Middle-class people spend most of their money, which boosts the economy. Very rich people don't (it's hard to spend millions every month), which keeps money out of the economy.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -111,8 +136,11 @@
 							Wealth Inequality in America, Perception vs Reality, by CrisisForums.org
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp2">
@@ -122,8 +150,11 @@
 							Inequality is real, it's personal, it's expensive and it was created, by Economic Policy Institute
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vp3">
@@ -133,8 +164,11 @@
 							Inequality and You, by Stuff They Don't Want You To Know - HowStuffWorks
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -144,22 +178,31 @@
 				<li id="ac1">
 					<h5>Freedom leads to inequality.</h5>
 					<p>Inequality, even great inequality, is the cost of people being free to make good choices and bad choices. And Freedom is our core American value.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac2">
 					<h5>Inequality promotes individual effort.</h5>
 					<p>Human nature dictates that we only give our best when we know that there will be winners and losers. Competition is what has made America great.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="ac3">
 					<h5>The alternative to inequality is Socialism.</h5>
 					<p>Inequality has its dark side, but the alternative is much worse. It's basically government controlling wealth, either by redistributing it or by getting rid of the free market altogether.</p>
-					<div class="share-mail-arg">
-						<a href="">Share</a>
+					<div class="mail-arg">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-arg">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>
@@ -168,22 +211,28 @@
 					<figure>
 						<iframe class='youtube' src="https://youtube.com/embed/44LHBViTZI0?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
 						<figcaption>
-							What Wasn't Said in "Wealth Inequality In America", by Learn Liberty
+							What Wasn't Said in 'Wealth Inequality In America', by Learn Liberty
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc2">
 					<figure>
 						<iframe class='youtube' src="https://youtube.com/embed/0tjwnMYqaeQ?rel=0&amp;showinfo=0&amp;autohide=1" allowfullscreen></iframe>
 						<figcaption>
-							Bill O'Reilly Discusses "Income Inequality", by USAhistorywriter
+							Bill O'Reilly Discusses 'Income Inequality', by USAhistorywriter
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 				<li id="vc3">
@@ -193,8 +242,11 @@
 							eEconomics - SPECIAL - Tax Inequality in America, by eEconomics
 						</figcaption>
 					</figure>
-					<div class="share-mail-vid">
-						<a href="">Share</a>
+					<div class="mail-vid">
+						<a href="">Email</a>
+					</div>
+					<div class="tweet-vid">
+						<a href="" target="_blank">Tweet</a>
 					</div>
 				</li>
 			</ul>

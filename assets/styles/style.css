@@ -457,12 +457,19 @@ ul.vids li {
 	/*text-align: right;*/
 }
 
-.at4-show, .at4-show-content {
+
+/* our sharing buttons */
+.mail-arg,
+.mail-vid,
+.tweet-arg,
+.tweet-vid {
+	display:inline-block;
 }
 
-/* our mail sharing button */
-.share-mail-arg a,
-.share-mail-vid a {
+.mail-arg a,
+.mail-vid a,
+.tweet-arg a,
+.tweet-vid a {
 	border:1px solid #aaa;
 	border-radius:5px;
 	color:#777;
@@ -471,24 +478,14 @@ ul.vids li {
 	margin-bottom: .75em;
 }
 
-.share-mail-alt a {
-	color:#666;
-	background:#EBEBEB;
-	border-radius:5px;
-	padding:3px 6px;
-	font-size:.75em;
-	margin-bottom:.75em;
-	border:none;
-}
-
 
 /* http://simplesharingbuttons.com/ 
-ul.share-buttons{
+ul.buttons{
   list-style: none;
   padding: 0;
 }
 
-ul.share-buttons li{
+ul.buttons li{
   display: inline;
 }
 /* end simplesharingbuttons.com */
